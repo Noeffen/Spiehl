@@ -14,8 +14,8 @@
   body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--ink); -webkit-font-smoothing: antialiased; }
   a { color: var(--forest); }
   .container { max-width: 800px; margin: 0 auto; padding: 0 2.5rem; }
-  nav { padding: 2rem 0; }
-  .nav-inner { max-width: 800px; margin: 0 auto; padding: 0 2.5rem; display: flex; justify-content: space-between; align-items: center; }
+  nav { padding: 1.6rem 0; }
+  .nav-inner { max-width: 1440px; margin: 0 auto; padding: 0 clamp(1.4rem, 4vw, 2.5rem); display: flex; justify-content: space-between; align-items: center; }
   .brand { font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 500; color: var(--forest); }
   .brand em { font-style: italic; color: var(--gold); }
   .back { font-size: .8rem; color: var(--muted); }
@@ -33,7 +33,7 @@
   footer { padding: 2.4rem 0; border-top: 1px solid var(--cream-line); }
   .footer-inner { max-width: 800px; margin: 0 auto; padding: 0 2.5rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; font-size: .78rem; color: var(--muted); }
   .footer-inner a { color: var(--muted); margin-left: 1.2rem; }
-  @media(max-width:600px){ .container,.nav-inner,.footer-inner{padding:0 1.4rem;} }
+  @media(max-width:600px){ .container,.footer-inner{padding:0 1.4rem;} .nav-inner{padding:0 1.4rem;} }
 </style>
 </head>
 <body>

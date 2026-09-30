@@ -74,12 +74,14 @@
   .nav-phone { font-size: .78rem; font-weight: 600; letter-spacing: .04em; color: var(--paper); border-bottom: 1px solid var(--gold-pale); padding-bottom: 2px; transition: opacity .2s; }
   .nav-phone:hover { opacity: .8; }
 
-  /* ── BUTTONS ── */
-  .btn { display: inline-flex; align-items: center; gap: .55rem; font-size: .82rem; font-weight: 600; letter-spacing: .01em; padding: .95rem 1.6rem; border-radius: 3px; transition: background .25s, color .25s, border-color .25s; }
-  .btn-solid { background: var(--gold); color: var(--forest); }
-  .btn-solid:hover { background: var(--gold-pale); }
-  .btn-line { border: 1px solid var(--line-dark); color: var(--paper); }
-  .btn-line:hover { border-color: var(--gold-pale); color: var(--gold-pale); }
+  /* ── CTA LINKS (no boxes, just styled underlined text) ── */
+  .cta-link { display: inline-flex; align-items: baseline; gap: .5rem; border-bottom: 1.5px solid currentColor; padding-bottom: 4px; transition: gap .25s ease, opacity .2s ease, color .2s ease; }
+  .cta-link:hover { gap: .85rem; }
+  .cta-link .arrow { display: inline-block; transition: transform .25s ease; }
+  .cta-link:hover .arrow { transform: translateX(3px); }
+  .cta-primary { font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: 1.08rem; color: var(--gold-pale); }
+  .cta-secondary { font-family: 'Inter', sans-serif; font-weight: 600; font-size: .85rem; letter-spacing: .01em; color: rgba(241,236,220,.6); border-color: rgba(241,236,220,.32); }
+  .cta-secondary:hover { color: var(--paper); border-color: var(--gold-pale); }
 
   /* ── HERO DIAGRAM (pure background, no card on top) ── */
   .diagram { position: absolute; top: 50%; right: -14%; transform: translateY(-50%); width: 64vw; max-width: 900px; aspect-ratio: 1; pointer-events: none; z-index: 1; opacity: .4; }
@@ -95,7 +97,7 @@
   .hero-inner h1 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(2.6rem, 5.2vw, 4.8rem); line-height: 1.05; letter-spacing: -.02em; margin-bottom: 1.5rem; }
   .hero-inner h1 em { color: var(--gold-pale); font-weight: 400; }
   .hero-inner .lead { font-size: 1.05rem; line-height: 1.8; color: rgba(241,236,220,.62); max-width: 480px; margin-bottom: 2.2rem; font-weight: 300; }
-  .hero-cta { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.4rem; }
+  .hero-cta { display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem 2.2rem; margin-bottom: 2.6rem; }
   .badges { display: flex; flex-wrap: wrap; gap: .8rem 2.2rem; border-top: 1px solid var(--line-dark); padding-top: 1.4rem; max-width: 560px; }
   .badge { display: flex; align-items: baseline; gap: .7rem; font-size: .8rem; color: rgba(241,236,220,.55); }
   .badge .mono { color: var(--gold-pale); font-size: .7rem; font-family: 'Space Mono', monospace; }
@@ -162,8 +164,8 @@
       <h1>Bäume sicher <em>einschätzen.</em></h1>
       <p class="lead">Fundierte Baumgutachten, Kontrollen und Sicherheitsprüfungen von zertifizierter Hand. Für Kommunen, Wohnungsunternehmen, Versicherungen und Privateigentümer.</p>
       <div class="hero-cta">
-        <a href="kontakt.html" class="btn btn-solid">Gutachten anfragen →</a>
-        <a href="leistungen.html" class="btn btn-line">Leistungen ansehen</a>
+        <a href="kontakt.html" class="cta-link cta-primary">Gutachten anfragen <span class="arrow">→</span></a>
+        <a href="leistungen.html" class="cta-link cta-secondary">Leistungen ansehen</a>
       </div>
       <div class="badges">
         <div class="badge"><span class="mono">01</span> Zertifizierter Sachverständiger</div>

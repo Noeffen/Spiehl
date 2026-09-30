@@ -33,10 +33,10 @@
   }
   body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--paper); color: var(--ink); -webkit-font-smoothing: antialiased; }
   a { text-decoration: none; color: inherit; }
-  .container { max-width: 1180px; margin: 0 auto; padding: 0 2.5rem; }
+  .container { max-width: 1440px; margin: 0 auto; padding: 0 clamp(1.4rem, 4vw, 4rem); }
 
-  header { position: fixed; top: 0; left: 0; right: 0; z-index: 500; padding: 1.5rem 0; transition: background .3s, padding .3s, box-shadow .3s; }
-  header.scrolled { background: rgba(241,236,220,0.92); backdrop-filter: blur(14px); padding: 1.1rem 0; box-shadow: 0 1px 0 var(--line); }
+  header { position: fixed; top: 0; left: 0; right: 0; z-index: 500; padding: 1.6rem clamp(1.4rem, 4vw, 2.5rem); transition: background .3s, padding .3s, box-shadow .3s; }
+  header.scrolled { background: rgba(241,236,220,0.92); backdrop-filter: blur(14px); padding: 1.1rem clamp(1.4rem, 4vw, 2.5rem); box-shadow: 0 1px 0 var(--line); }
   .nav-inner { display: flex; justify-content: space-between; align-items: center; }
   .brand { font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.2rem; letter-spacing: -.01em; color: var(--forest); }
   .brand em { font-style: italic; color: var(--gold); }
@@ -78,12 +78,15 @@
   .fg input:focus, .fg select:focus, .fg textarea:focus { outline: none; border-color: var(--gold); }
   .fg textarea { resize: vertical; min-height: 120px; }
   .submit-btn {
-    width: 100%; padding: 1rem; border: none; border-radius: 2px; margin-top: .4rem;
-    background: var(--forest); color: var(--paper);
-    font-family: inherit; font-size: .92rem; font-weight: 600; cursor: pointer; transition: background .2s;
+    display: inline-flex; align-items: baseline; gap: .5rem; margin-top: .6rem;
+    background: none; border: none; border-bottom: 1.5px solid var(--gold);
+    padding: 0 0 4px; font-family: 'Fraunces', serif; font-style: italic; font-weight: 500;
+    font-size: 1.08rem; color: var(--gold); cursor: pointer; transition: gap .25s ease, color .2s ease;
   }
-  .submit-btn:hover { background: var(--gold); color: var(--forest); }
-  .form-note { font-size: .76rem; color: var(--muted); margin-top: 1rem; line-height: 1.6; }
+  .submit-btn:hover { gap: .85rem; color: var(--forest); border-color: var(--forest); }
+  .submit-btn .arrow { display: inline-block; transition: transform .25s ease; }
+  .submit-btn:hover .arrow { transform: translateX(3px); }
+  .form-note { font-size: .76rem; color: var(--muted); margin-top: 1.4rem; line-height: 1.6; }
   .form-note a { color: var(--forest); font-weight: 600; }
 
   footer { background: var(--forest); color: rgba(241,236,220,.5); padding: 3.5rem 0 2rem; }
@@ -118,6 +121,8 @@
   }
   @media(max-width: 600px) {
     .container { padding: 0 1.4rem; }
+    header { padding: 1.2rem 1.4rem; }
+    header.scrolled { padding: 1rem 1.4rem; }
     .form-row { grid-template-columns: 1fr; }
     form { padding: 1.6rem; }
   }
@@ -126,7 +131,7 @@
 <body>
 
 <header id="siteHeader">
-  <div class="container nav-inner">
+  <div class="nav-inner">
     <a href="index.html" class="brand">Spiehl <em>Baumgutachten</em></a>
     <div class="nav-links">
       <a href="leistungen.html" class="link">Leistungen</a>
@@ -190,7 +195,7 @@
         </select>
       </div>
       <div class="fg"><label>NACHRICHT *</label><textarea id="message" required placeholder="Beschreiben Sie kurz den Baum, den Standort und Ihr Anliegen..."></textarea></div>
-      <button type="submit" class="submit-btn">Anfrage senden →</button>
+      <button type="submit" class="submit-btn">Anfrage senden <span class="arrow">→</span></button>
       <p class="form-note">Beim Absenden öffnet sich Ihr E-Mail-Programm mit vorausgefüllter Nachricht, es werden keine Daten an einen Server übertragen. Mehr in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
     </form>
   </div>
