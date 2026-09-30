@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Über mich · Baumsachverständiger Spiehl</title>
+<meta name="description" content="Zertifizierter Baumsachverständiger im Odenwald – Qualifikation, Arbeitsweise und Herangehensweise von Spiehl Baumgutachten.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://baumgutachten-spiehl.de/ueber-mich.html">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Start", "item": "https://baumgutachten-spiehl.de/"},
+      {"@type": "ListItem", "position": 2, "name": "Über mich", "item": "https://baumgutachten-spiehl.de/ueber-mich.html"}
+    ]}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --forest: #0E1F17; --forest-mid: #16301F;
+    --gold: #C9A44C; --gold-soft: #E4CE94;
+    --cream: #F6F2E9; --cream-line: rgba(16,30,20,0.1);
+    --ink: #16211B; --muted: #6B7A70;
+  }
+  body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--cream); color: var(--ink); -webkit-font-smoothing: antialiased; }
+  a { text-decoration: none; color: inherit; }
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 2.5rem; }
+
+  header { position: fixed; top: 0; left: 0; right: 0; z-index: 500; padding: 1.4rem 0; transition: background .3s, padding .3s, box-shadow .3s; }
+  header.scrolled { background: rgba(246,242,233,0.92); backdrop-filter: blur(14px); padding: 1rem 0; box-shadow: 0 8px 30px -20px rgba(16,30,20,.3); }
+  .nav-inner { display: flex; justify-content: space-between; align-items: center; }
+  .brand { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.25rem; letter-spacing: -.01em; color: var(--forest); }
+  .brand em { font-style: italic; color: var(--gold); font-weight: 500; }
+  .nav-links { display: flex; align-items: center; gap: 2.2rem; }
+  .nav-links a.link { font-size: .85rem; font-weight: 500; color: var(--ink); opacity: .65; transition: opacity .2s; }
+  .nav-links a.link:hover, .nav-links a.link.active { opacity: 1; }
+  .nav-phone { font-size: .85rem; font-weight: 600; color: var(--forest); border: 1px solid var(--forest); padding: .55rem 1.2rem; border-radius: 999px; transition: background .2s, color .2s; }
+  .nav-phone:hover { background: var(--forest); color: var(--cream); }
+
+  .page-hero { background: var(--forest); color: #fff; padding: 11rem 0 5rem; }
+  .kicker { display: inline-flex; align-items: center; gap: .6rem; font-size: .72rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--gold-soft); margin-bottom: 1.2rem; }
+  .kicker::before { content: ''; width: 22px; height: 1px; background: var(--gold-soft); }
+  .page-hero h1 { font-family: 'Fraunces', serif; font-weight: 600; font-size: clamp(2.3rem, 4vw, 3.4rem); letter-spacing: -.02em; }
+  .page-hero h1 em { font-style: italic; color: var(--gold-soft); font-weight: 500; }
+
+  .about-section { padding: 5.5rem 0; }
+  .about-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 3.5rem; align-items: start; }
+  .photo-box {
+    aspect-ratio: 4/5; border-radius: 22px; overflow: hidden;
+    background: linear-gradient(155deg, var(--forest), #1c3a26);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; border: 1px solid var(--cream-line);
+  }
+  .photo-box svg { width: 34%; opacity: .35; color: var(--gold-soft); }
+  .photo-note { position: absolute; bottom: 1.2rem; left: 1.2rem; right: 1.2rem; font-size: .72rem; color: rgba(255,255,255,.55); text-align: center; letter-spacing: .04em; }
+  .about-text h2 { font-family: 'Fraunces', serif; font-weight: 600; font-size: 2rem; color: var(--forest); margin-bottom: 1.2rem; letter-spacing: -.01em; }
+  .about-text h2 em { font-style: italic; color: var(--gold); }
+  .about-text p { font-size: .98rem; line-height: 1.85; color: var(--muted); margin-bottom: 1.2rem; max-width: 560px; }
+  .placeholder { background: #fef3c7; color: #92660c; padding: .05rem .4rem; border-radius: 4px; font-weight: 600; }
+
+  .cred-list { margin-top: 2rem; display: flex; flex-direction: column; gap: 0; }
+  .cred-row { display: flex; gap: 1rem; align-items: flex-start; padding: 1.1rem 0; border-top: 1px solid var(--cream-line); }
+  .cred-list .cred-row:last-child { border-bottom: 1px solid var(--cream-line); }
+  .cred-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); margin-top: .4rem; flex-shrink: 0; }
+  .cred-row span { font-size: .92rem; color: var(--ink); line-height: 1.6; }
+
+  .approach { background: var(--forest); color: #fff; padding: 5.5rem 0; }
+  .approach .kicker { color: var(--gold-soft); }
+  .approach .kicker::before { background: var(--gold-soft); }
+  .approach h2 { font-family: 'Fraunces', serif; font-weight: 600; font-size: 2.1rem; margin-bottom: 2.6rem; letter-spacing: -.01em; max-width: 620px; }
+  .approach h2 em { font-style: italic; color: var(--gold-soft); }
+  .approach-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.8rem; }
+  .approach-card p { font-size: .88rem; line-height: 1.75; color: rgba(255,255,255,.62); }
+  .approach-card h4 { font-size: 1rem; font-weight: 600; margin-bottom: .7rem; color: #fff; }
+
+  .cta-strip { background: #fff; border: 1px solid var(--cream-line); border-radius: 26px; padding: 3.4rem 3rem; display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap; margin: 5rem 0; }
+  .cta-strip h3 { font-family: 'Fraunces', serif; font-size: 1.6rem; font-weight: 600; color: var(--forest); max-width: 420px; }
+  .cta-strip h3 em { font-style: italic; color: var(--gold); }
+  .btn { display: inline-flex; align-items: center; gap: .5rem; font-size: .88rem; font-weight: 600; padding: 1rem 1.7rem; border-radius: 999px; transition: transform .2s; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-gold { background: linear-gradient(135deg, var(--gold-soft), var(--gold)); color: var(--forest); }
+  .btn-outline { border: 1px solid var(--forest); color: var(--forest); }
+
+  footer { background: var(--forest); color: rgba(255,255,255,.5); padding: 3.5rem 0 2rem; }
+  .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .footer-grid .brand { color: #fff; margin-bottom: .8rem; display: inline-block; }
+  .footer-grid p { font-size: .85rem; line-height: 1.7; max-width: 320px; }
+  .footer-col h5 { font-size: .7rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: 1rem; }
+  .footer-col a { display: block; font-size: .85rem; margin-bottom: .7rem; color: rgba(255,255,255,.65); transition: color .2s; }
+  .footer-col a:hover { color: #fff; }
+  .footer-bottom { display: flex; justify-content: space-between; padding-top: 1.6rem; font-size: .76rem; flex-wrap: wrap; gap: .6rem; }
+
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  @media(max-width: 900px) {
+    .about-grid { grid-template-columns: 1fr; }
+    .approach-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .nav-links .link { display: none; }
+  }
+  @media(max-width: 600px) {
+    .container { padding: 0 1.4rem; }
+    .cta-strip { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand">Spiehl <em>Baumgutachten</em></a>
+    <div class="nav-links">
+      <a href="leistungen.html" class="link">Leistungen</a>
+      <a href="ueber-mich.html" class="link active">Über mich</a>
+      <a href="kontakt.html" class="link">Kontakt</a>
+      <a href="tel:+491234567890" class="nav-phone">0123 456 7890</a>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="kicker reveal">Über mich</div>
+    <h1 class="reveal">Fachlich fundiert, <em>persönlich vor Ort.</em></h1>
+  </div>
+</section>
+
+<section class="about-section">
+  <div class="container about-grid">
+    <div class="photo-box reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 21s-7-7.2-7-12a7 7 0 1 1 14 0c0 4.8-7 12-7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg>
+      <div class="photo-note">Porträtfoto folgt</div>
+    </div>
+    <div class="about-text reveal d1">
+      <h2>Herr <span class="placeholder">[Vorname] Spiehl</span></h2>
+      <p>Mein Anspruch ist es, Baumrisiken nicht pauschal, sondern anhand des Einzelfalls fachlich fundiert zu beurteilen &mdash; mit anerkannten Verfahren und einer Dokumentation, die auch vor Behörden und Gerichten Bestand hat.</p>
+      <p><span class="placeholder">[Kurzer persönlicher Werdegang: seit wann tätig, beruflicher Hintergrund, ggf. Ausbildung im Bereich Forstwirtschaft/Arboristik]</span></p>
+      <p>Jeder Auftrag wird persönlich von mir bearbeitet &mdash; von der ersten Anfrage über den Vor-Ort-Termin bis zum fertigen Gutachten.</p>
+
+      <span style="font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8a6d28;">Qualifikationen</span>
+      <div class="cred-list">
+        <div class="cred-row"><div class="cred-dot"></div><span class="placeholder">[Zertifizierung 1 einfügen, z.B. Ausbildung/Lehrgang]</span></div>
+        <div class="cred-row"><div class="cred-dot"></div><span class="placeholder">[Zertifizierung 2 einfügen]</span></div>
+        <div class="cred-row"><div class="cred-dot"></div><span class="placeholder">[Mitgliedschaft in Fachverband, falls vorhanden]</span></div>
+        <div class="cred-row"><div class="cred-dot"></div><span class="placeholder">[Jahre Berufserfahrung / bisherige Tätigkeit]</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="approach">
+  <div class="container">
+    <div class="kicker reveal">Arbeitsweise</div>
+    <h2 class="reveal d1">Klar, nachvollziehbar <em>und ehrlich.</em></h2>
+    <div class="approach-grid">
+      <div class="approach-card reveal d1">
+        <h4>Ehrliche Einschätzung</h4>
+        <p>Nicht jeder auffällige Baum muss gefällt werden. Ich empfehle die Maßnahme, die tatsächlich notwendig ist &mdash; nicht die aufwendigste.</p>
+      </div>
+      <div class="approach-card reveal d2">
+        <h4>Nachvollziehbare Berichte</h4>
+        <p>Jedes Gutachten ist so aufgebaut, dass auch fachfremde Auftraggeber die Einschätzung und die Grundlage dafür verstehen.</p>
+      </div>
+      <div class="approach-card reveal d3">
+        <h4>Persönlicher Kontakt</h4>
+        <p>Rückfragen beantworte ich direkt &mdash; ohne Callcenter oder lange Warteschleifen. Ein Anruf genügt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="cta-strip reveal">
+    <h3>Lernen wir uns <em>kennen.</em></h3>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+      <a href="kontakt.html" class="btn btn-gold">Kontakt aufnehmen →</a>
+      <a href="tel:+491234567890" class="btn btn-outline">0123 456 7890</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="brand">Spiehl <em style="color:#C9A44C;font-style:italic;">Baumgutachten</em></a>
+        <p>Zertifizierte Baumgutachten und Sicherheitsprüfungen im Odenwald und Rhein-Main-Gebiet.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navigation</h5>
+        <a href="leistungen.html">Leistungen</a>
+        <a href="ueber-mich.html">Über mich</a>
+        <a href="kontakt.html">Kontakt</a>
+      </div>
+      <div class="footer-col">
+        <h5>Kontakt</h5>
+        <a href="tel:+491234567890">0123 456 7890</a>
+        <a href="mailto:info@baumgutachten-spiehl.de">info@baumgutachten-spiehl.de</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Spiehl Baumgutachten</span>
+      <div style="display:flex;gap:1.4rem;">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('scroll', function(){
+  document.getElementById('siteHeader').classList.toggle('scrolled', window.scrollY > 30);
+}, { passive: true });
+var io = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){ if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.15 });
+document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+</script>
+
+</body>
+</html>
