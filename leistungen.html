@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Leistungen · Baumsachverständiger Spiehl</title>
-<meta name="description" content="Baumkontrolle, Bruchsicherheit, Standsicherheit und Holzwertermittlung – Leistungen des Baumsachverständigen Spiehl im Odenwald & Rhein-Main-Gebiet.">
+<meta name="description" content="Baumkontrolle, Bruchsicherheit, Standsicherheit und Holzwertermittlung - Leistungen des Baumsachverständigen Spiehl im Odenwald & Rhein-Main-Gebiet.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://baumgutachten-spiehl.de/leistungen.html">
 
@@ -26,68 +26,71 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   :root {
-    --forest: #0E1F17; --forest-mid: #16301F; --forest-line: rgba(255,255,255,0.1);
-    --gold: #C9A44C; --gold-soft: #E4CE94;
-    --cream: #F6F2E9; --cream-line: rgba(16,30,20,0.1);
-    --ink: #16211B; --muted: #6B7A70;
+    --forest: #12201A; --gold: #A9863C; --gold-pale: #C9AC6E;
+    --paper: #F1ECDC; --line: rgba(18,32,26,0.14); --line-dark: rgba(241,236,220,0.14);
+    --ink: #16211B; --muted: #6C7566;
   }
   html { scroll-behavior: smooth; }
-  body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--cream); color: var(--ink); -webkit-font-smoothing: antialiased; }
+  body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--paper); color: var(--ink); -webkit-font-smoothing: antialiased; }
   a { text-decoration: none; color: inherit; }
   .container { max-width: 1180px; margin: 0 auto; padding: 0 2.5rem; }
 
-  header { position: fixed; top: 0; left: 0; right: 0; z-index: 500; padding: 1.4rem 0; transition: background .3s, padding .3s, box-shadow .3s; }
-  header.scrolled { background: rgba(246,242,233,0.92); backdrop-filter: blur(14px); padding: 1rem 0; box-shadow: 0 8px 30px -20px rgba(16,30,20,.3); }
+  header { position: fixed; top: 0; left: 0; right: 0; z-index: 500; padding: 1.5rem 0; transition: background .3s, padding .3s, box-shadow .3s; }
+  header.scrolled { background: rgba(241,236,220,0.92); backdrop-filter: blur(14px); padding: 1.1rem 0; box-shadow: 0 1px 0 var(--line); }
   .nav-inner { display: flex; justify-content: space-between; align-items: center; }
-  .brand { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.25rem; letter-spacing: -.01em; color: var(--forest); }
-  .brand em { font-style: italic; color: var(--gold); font-weight: 500; }
-  .nav-links { display: flex; align-items: center; gap: 2.2rem; }
-  .nav-links a.link { font-size: .85rem; font-weight: 500; color: var(--ink); opacity: .65; transition: opacity .2s; }
+  .brand { font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.2rem; letter-spacing: -.01em; color: var(--forest); }
+  .brand em { font-style: italic; color: var(--gold); }
+  .nav-links { display: flex; align-items: center; gap: 2.4rem; }
+  .nav-links a.link { font-size: .82rem; font-weight: 500; color: var(--ink); opacity: .6; transition: opacity .2s; }
   .nav-links a.link:hover, .nav-links a.link.active { opacity: 1; }
-  .nav-phone { font-size: .85rem; font-weight: 600; color: var(--forest); border: 1px solid var(--forest); padding: .55rem 1.2rem; border-radius: 999px; transition: background .2s, color .2s; }
-  .nav-phone:hover { background: var(--forest); color: var(--cream); }
+  .nav-phone { font-size: .78rem; font-weight: 600; letter-spacing: .04em; color: var(--forest); border-bottom: 1px solid var(--forest); padding-bottom: 2px; transition: color .2s, border-color .2s; }
+  .nav-phone:hover { color: var(--gold); border-color: var(--gold); }
 
-  .page-hero { background: var(--forest); color: #fff; padding: 11rem 0 5rem; }
-  .kicker { display: inline-flex; align-items: center; gap: .6rem; font-size: .72rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--gold-soft); margin-bottom: 1.2rem; }
-  .kicker::before { content: ''; width: 22px; height: 1px; background: var(--gold-soft); }
-  .page-hero h1 { font-family: 'Fraunces', serif; font-weight: 600; font-size: clamp(2.3rem, 4vw, 3.4rem); letter-spacing: -.02em; margin-bottom: 1.2rem; }
-  .page-hero h1 em { font-style: italic; color: var(--gold-soft); font-weight: 500; }
-  .page-hero p { font-size: 1rem; line-height: 1.8; color: rgba(255,255,255,.62); max-width: 560px; font-weight: 300; }
+  .btn { display: inline-flex; align-items: center; gap: .55rem; font-size: .82rem; font-weight: 600; padding: .95rem 1.6rem; border-radius: 3px; transition: background .25s, color .25s, border-color .25s; }
+  .btn-solid { background: var(--gold); color: var(--forest); }
+  .btn-solid:hover { opacity: .85; }
+  .btn-line { border: 1px solid var(--line-dark); color: var(--paper); }
+  .btn-line:hover { border-color: var(--gold-pale); color: var(--gold-pale); }
 
-  .svc-detail { padding: 5.5rem 0; border-bottom: 1px solid var(--cream-line); }
-  .svc-detail-grid { display: grid; grid-template-columns: 90px 1fr 1fr; gap: 3rem; align-items: start; }
-  .svc-num { font-family: 'Fraunces', serif; font-style: italic; font-size: 2.6rem; color: var(--gold); opacity: .55; }
-  .svc-detail h2 { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.9rem; color: var(--forest); margin-bottom: 1rem; letter-spacing: -.01em; }
+  .page-hero { background: var(--forest); color: var(--paper); padding: 11rem 0 5rem; }
+  .kicker { display: inline-flex; align-items: center; gap: .7rem; font-family: 'Space Mono', monospace; font-size: .68rem; letter-spacing: .08em; color: var(--gold-pale); margin-bottom: 1.3rem; }
+  .kicker::before { content: ''; width: 22px; height: 1px; background: var(--gold-pale); }
+  .page-hero h1 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(2.3rem, 4vw, 3.4rem); letter-spacing: -.02em; margin-bottom: 1.2rem; }
+  .page-hero h1 em { font-style: italic; color: var(--gold-pale); font-weight: 400; }
+  .page-hero p { font-size: 1rem; line-height: 1.8; color: rgba(241,236,220,.62); max-width: 560px; font-weight: 300; }
+
+  .svc-detail { padding: 5.5rem 0; border-bottom: 1px solid var(--line); }
+  .svc-detail-grid { display: grid; grid-template-columns: 70px 1fr 1fr; gap: 3rem; align-items: start; }
+  .svc-num { font-family: 'Space Mono', monospace; font-size: 1rem; color: var(--gold); padding-top: .4rem; }
+  .svc-detail h2 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.9rem; color: var(--forest); margin-bottom: 1rem; letter-spacing: -.01em; }
   .svc-detail .lead-txt { font-size: 1rem; line-height: 1.85; color: var(--muted); margin-bottom: 1.2rem; }
-  .svc-meta-label { font-size: .68rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: .6rem; display: block; }
+  .svc-meta-label { font-family: 'Space Mono', monospace; font-size: .64rem; letter-spacing: .08em; color: var(--gold); margin-bottom: .7rem; display: block; }
   .svc-meta p { font-size: .92rem; line-height: 1.8; color: var(--muted); margin-bottom: 1.4rem; }
-  .svc-tags { display: flex; flex-wrap: wrap; gap: .5rem; }
-  .svc-tag { font-size: .76rem; font-weight: 600; padding: .4rem .9rem; border-radius: 999px; background: rgba(201,164,76,.1); color: #8a6d28; }
+  .svc-tags { font-size: .8rem; color: var(--muted); }
+  .svc-tags span { color: var(--forest); font-weight: 600; }
+  .svc-tags .sep { color: var(--gold); margin: 0 .6rem; }
 
-  .cta-strip { background: linear-gradient(135deg, var(--forest), #1c3a26); color: #fff; border-radius: 26px; padding: 3.4rem 3rem; display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap; margin: 5rem 0; }
-  .cta-strip h3 { font-family: 'Fraunces', serif; font-size: 1.7rem; font-weight: 600; max-width: 420px; }
-  .cta-strip h3 em { font-style: italic; color: var(--gold-soft); }
-  .btn { display: inline-flex; align-items: center; gap: .5rem; font-size: .88rem; font-weight: 600; padding: 1rem 1.7rem; border-radius: 999px; transition: transform .2s; }
-  .btn:hover { transform: translateY(-2px); }
-  .btn-gold { background: linear-gradient(135deg, var(--gold-soft), var(--gold)); color: var(--forest); }
-  .btn-ghost { border: 1px solid rgba(255,255,255,.25); color: #fff; }
+  .cta-strip { background: var(--forest); color: var(--paper); padding: 3.4rem 3rem; display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap; margin: 5rem 0; }
+  .cta-strip h3 { font-family: 'Fraunces', serif; font-size: 1.7rem; font-weight: 500; max-width: 420px; }
+  .cta-strip h3 em { font-style: italic; color: var(--gold-pale); }
 
-  footer { background: var(--forest); color: rgba(255,255,255,.5); padding: 3.5rem 0 2rem; }
-  .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,.08); }
-  .footer-grid .brand { color: #fff; margin-bottom: .8rem; display: inline-block; }
+  footer { background: var(--forest); color: rgba(241,236,220,.5); padding: 3.5rem 0 2rem; }
+  .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--line-dark); }
+  .footer-grid .brand { color: var(--paper); margin-bottom: .8rem; display: inline-block; }
   .footer-grid p { font-size: .85rem; line-height: 1.7; max-width: 320px; }
-  .footer-col h5 { font-size: .7rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: 1rem; }
-  .footer-col a { display: block; font-size: .85rem; margin-bottom: .7rem; color: rgba(255,255,255,.65); transition: color .2s; }
-  .footer-col a:hover { color: #fff; }
+  .footer-col h5 { font-family: 'Space Mono', monospace; font-size: .66rem; letter-spacing: .08em; color: rgba(241,236,220,.4); margin-bottom: 1rem; }
+  .footer-col a { display: block; font-size: .85rem; margin-bottom: .7rem; color: rgba(241,236,220,.65); transition: color .2s; }
+  .footer-col a:hover { color: var(--paper); }
   .footer-bottom { display: flex; justify-content: space-between; padding-top: 1.6rem; font-size: .76rem; flex-wrap: wrap; gap: .6rem; }
 
   .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
   .reveal.visible { opacity: 1; transform: translateY(0); }
+  .d1{transition-delay:.06s}.d2{transition-delay:.14s}.d3{transition-delay:.22s}.d4{transition-delay:.3s}
 
   @media(max-width: 900px) {
     .svc-detail-grid { grid-template-columns: 1fr; gap: 1.2rem; }
@@ -116,9 +119,9 @@
 
 <section class="page-hero">
   <div class="container">
-    <div class="kicker reveal">Leistungen</div>
+    <div class="kicker reveal">// Leistungen</div>
     <h1 class="reveal">Vier Prüfverfahren, <em>ein Ziel: Klarheit.</em></h1>
-    <p class="reveal">Jede Untersuchung wird individuell auf Ihre Fragestellung abgestimmt &mdash; von der einfachen Sichtkontrolle bis zur eingehenden technischen Untersuchung.</p>
+    <p class="reveal">Jede Untersuchung wird individuell auf Ihre Fragestellung abgestimmt, von der einfachen Sichtkontrolle bis zur eingehenden technischen Untersuchung.</p>
   </div>
 </section>
 
@@ -127,15 +130,15 @@
     <div class="svc-num reveal">01</div>
     <div class="reveal d1">
       <h2>Baumkontrolle</h2>
-      <p class="lead-txt">Die regelmäßige Baumkontrolle dient der Beurteilung der Verkehrssicherheit &mdash; also der Frage, ob von einem Baum eine erkennbare Gefahr für Personen oder Sachwerte ausgeht.</p>
+      <p class="lead-txt">Die regelmäßige Baumkontrolle dient der Beurteilung der Verkehrssicherheit, also der Frage, ob von einem Baum eine erkennbare Gefahr für Personen oder Sachwerte ausgeht.</p>
       <p class="lead-txt">Als Grundstückseigentümer sind Sie zur regelmäßigen Kontrolle Ihrer Bäume verpflichtet. Eine dokumentierte Sichtkontrolle nach anerkannten Methoden schützt Sie im Schadensfall und hilft, Risiken frühzeitig zu erkennen.</p>
     </div>
     <div class="reveal d2">
-      <span class="svc-meta-label">Für wen geeignet</span>
+      <span class="svc-meta-label">FÜR WEN GEEIGNET</span>
       <p>Kommunen, Wohnungsunternehmen, Friedhofs- und Kirchengemeinden, private Grundstückseigentümer mit Baumbestand.</p>
-      <span class="svc-meta-label">Typische Anlässe</span>
+      <span class="svc-meta-label">TYPISCHE ANLÄSSE</span>
       <p>Regelmäßige Kontrollpflicht, Auffälligkeiten nach Sturm, Verdacht auf Schädlingsbefall oder Fäule, Vorbereitung von Bauvorhaben in Baumnähe.</p>
-      <div class="svc-tags"><span class="svc-tag">Sichtkontrolle</span><span class="svc-tag">Verkehrssicherheit</span><span class="svc-tag">Dokumentation</span></div>
+      <div class="svc-tags"><span>Sichtkontrolle</span><span class="sep">/</span><span>Verkehrssicherheit</span><span class="sep">/</span><span>Dokumentation</span></div>
     </div>
   </div>
 </section>
@@ -145,15 +148,15 @@
     <div class="svc-num reveal">02</div>
     <div class="reveal d1">
       <h2>Bruchsicherheit</h2>
-      <p class="lead-txt">Zeigt die äußere Kontrolle Auffälligkeiten, folgt bei Bedarf eine eingehende Untersuchung der inneren Holzsubstanz &mdash; etwa mit Schalltomographie oder Bohrwiderstandsmessung.</p>
+      <p class="lead-txt">Zeigt die äußere Kontrolle Auffälligkeiten, folgt bei Bedarf eine eingehende Untersuchung der inneren Holzsubstanz, etwa mit Schalltomographie oder Bohrwiderstandsmessung.</p>
       <p class="lead-txt">So lässt sich beurteilen, ob Fäule, Hohlräume oder Rindenschäden die Stabilität von Stamm oder Kronenteilen beeinträchtigen, ohne den Baum unnötig zu verletzen.</p>
     </div>
     <div class="reveal d2">
-      <span class="svc-meta-label">Für wen geeignet</span>
+      <span class="svc-meta-label">FÜR WEN GEEIGNET</span>
       <p>Eigentümer wertvoller oder besonders exponierter Einzelbäume, Kommunen bei Bäumen mit erhöhtem Konfliktpotenzial.</p>
-      <span class="svc-meta-label">Typische Anlässe</span>
+      <span class="svc-meta-label">TYPISCHE ANLÄSSE</span>
       <p>Sichtbare Fäulnisanzeichen, Pilzfruchtkörper, Rindenschäden, Verdacht auf Hohlräume nach äußerlicher Kontrolle.</p>
-      <div class="svc-tags"><span class="svc-tag">Schalltomographie</span><span class="svc-tag">Bohrwiderstand</span><span class="svc-tag">Zerstörungsarm</span></div>
+      <div class="svc-tags"><span>Schalltomographie</span><span class="sep">/</span><span>Bohrwiderstand</span><span class="sep">/</span><span>Zerstörungsarm</span></div>
     </div>
   </div>
 </section>
@@ -163,15 +166,15 @@
     <div class="svc-num reveal">03</div>
     <div class="reveal d1">
       <h2>Standsicherheit</h2>
-      <p class="lead-txt">Mit dem Zugversuch wird die Verankerung eines Baumes im Wurzelraum untersucht &mdash; ein bewährtes Verfahren, um die Standsicherheit auch bei intaktem Stamm objektiv zu beurteilen.</p>
+      <p class="lead-txt">Mit dem Zugversuch wird die Verankerung eines Baumes im Wurzelraum untersucht, ein bewährtes Verfahren, um die Standsicherheit auch bei intaktem Stamm objektiv zu beurteilen.</p>
       <p class="lead-txt">Besonders relevant, wenn Bauarbeiten im Wurzelbereich stattgefunden haben, der Baum sichtbar geneigt steht oder nach Sturmereignissen Zweifel an der Verankerung bestehen.</p>
     </div>
     <div class="reveal d2">
-      <span class="svc-meta-label">Für wen geeignet</span>
+      <span class="svc-meta-label">FÜR WEN GEEIGNET</span>
       <p>Eigentümer nach Bauarbeiten in Wurzelnähe, Kommunen bei geneigten oder freigestellten Bäumen.</p>
-      <span class="svc-meta-label">Typische Anlässe</span>
+      <span class="svc-meta-label">TYPISCHE ANLÄSSE</span>
       <p>Sichtbare Schiefstellung, Wurzelschäden durch Erdarbeiten, Freistellung nach Fällungen in der Umgebung, Sturmschäden in der Nachbarschaft.</p>
-      <div class="svc-tags"><span class="svc-tag">Zugversuch</span><span class="svc-tag">Wurzelraum</span><span class="svc-tag">Objektive Messung</span></div>
+      <div class="svc-tags"><span>Zugversuch</span><span class="sep">/</span><span>Wurzelraum</span><span class="sep">/</span><span>Objektive Messung</span></div>
     </div>
   </div>
 </section>
@@ -185,11 +188,11 @@
       <p class="lead-txt">Das Ergebnis ist eine nachvollziehbare, marktübliche Bewertung, die als Grundlage für Verhandlungen mit Versicherungen, Behörden oder Vertragspartnern dient.</p>
     </div>
     <div class="reveal d2">
-      <span class="svc-meta-label">Für wen geeignet</span>
+      <span class="svc-meta-label">FÜR WEN GEEIGNET</span>
       <p>Geschädigte nach Schadensereignissen, Versicherungen, Grundstückseigentümer im Rahmen von Kauf oder Verkauf.</p>
-      <span class="svc-meta-label">Typische Anlässe</span>
+      <span class="svc-meta-label">TYPISCHE ANLÄSSE</span>
       <p>Schäden durch Dritte, Streitfälle mit Nachbarn, Wertermittlung im Rahmen von Grundstücksgeschäften.</p>
-      <div class="svc-tags"><span class="svc-tag">Wertermittlung</span><span class="svc-tag">Versicherungsfälle</span><span class="svc-tag">Nachvollziehbar</span></div>
+      <div class="svc-tags"><span>Wertermittlung</span><span class="sep">/</span><span>Versicherungsfälle</span><span class="sep">/</span><span>Nachvollziehbar</span></div>
     </div>
   </div>
 </section>
@@ -198,8 +201,8 @@
   <div class="cta-strip reveal">
     <h3>Nicht sicher, welches <em>Verfahren passt?</em></h3>
     <div style="display:flex;gap:1rem;flex-wrap:wrap;">
-      <a href="kontakt.html" class="btn btn-gold">Unverbindlich anfragen →</a>
-      <a href="tel:+491234567890" class="btn btn-ghost">0123 456 7890</a>
+      <a href="kontakt.html" class="btn btn-solid">Unverbindlich anfragen →</a>
+      <a href="tel:+491234567890" class="btn btn-line">0123 456 7890</a>
     </div>
   </div>
 </div>
@@ -208,17 +211,17 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <a href="index.html" class="brand">Spiehl <em style="color:#C9A44C;font-style:italic;">Baumgutachten</em></a>
+        <a href="index.html" class="brand">Spiehl <em style="color:#C9AC6E;font-style:italic;">Baumgutachten</em></a>
         <p>Zertifizierte Baumgutachten und Sicherheitsprüfungen im Odenwald und Rhein-Main-Gebiet.</p>
       </div>
       <div class="footer-col">
-        <h5>Navigation</h5>
+        <h5>NAVIGATION</h5>
         <a href="leistungen.html">Leistungen</a>
         <a href="ueber-mich.html">Über mich</a>
         <a href="kontakt.html">Kontakt</a>
       </div>
       <div class="footer-col">
-        <h5>Kontakt</h5>
+        <h5>KONTAKT</h5>
         <a href="tel:+491234567890">0123 456 7890</a>
         <a href="mailto:info@baumgutachten-spiehl.de">info@baumgutachten-spiehl.de</a>
       </div>
