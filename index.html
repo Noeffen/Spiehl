@@ -60,7 +60,7 @@
   :root {
     --forest: #12201A; --gold: #A9863C; --gold-pale: #C9AC6E;
     --paper: #F1ECDC; --line: rgba(18,32,26,0.14); --line-dark: rgba(241,236,220,0.14);
-    --ink: #16211B; --muted: #6C7566;
+    --ink: #16211B; --muted: #5D6456;
   }
   html, body { height: 100%; overflow: hidden; background: var(--forest); }
   body {
@@ -69,6 +69,10 @@
   }
   a { text-decoration: none; color: inherit; }
   em { font-style: italic; }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  .skip-link { position: absolute; left: -9999px; top: 0; z-index: 9999; background: var(--forest); color: var(--paper); padding: .8rem 1.4rem; font-size: .85rem; font-weight: 600; }
+  .skip-link:focus { left: 1rem; top: 1rem; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--gold-pale); outline-offset: 2px; }
 
   .page { position: relative; width: 100vw; height: 100vh; overflow: hidden; }
 
@@ -149,6 +153,8 @@
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+
 <div class="page">
   <header>
     <div class="nav-inner">
@@ -163,7 +169,7 @@
   </header>
 
   <div class="hero-photo">
-    <img src="img/klettern.jpg" alt="Baumsachverständiger Spiehl bei der Untersuchung in der Krone" width="933" height="1400">
+    <img src="img/klettern.jpg" alt="Baumsachverständiger Spiehl bei der Untersuchung in der Krone" width="933" height="1400" fetchpriority="high" decoding="async">
   </div>
 
   <svg class="diagram" viewBox="0 0 400 400">
@@ -178,10 +184,10 @@
     <text x="206" y="40" font-size="11">Ø 84 cm</text>
   </svg>
 
-  <div class="hero-inner">
+  <div class="hero-inner" id="main-content">
     <div class="hero-content">
       <div class="eyebrow">// Baumsachverständiger · Odenwald &amp; Rhein-Main</div>
-      <h1>Bäume sicher <em>einschätzen.</em></h1>
+      <h1>Bäume sicher <em>einschätzen.</em><span class="sr-only"> Baumsachverständiger Lukas Spiehl im Odenwald und Rhein-Main-Gebiet.</span></h1>
       <p class="lead">Fundierte Baumgutachten, Kontrollen und Sicherheitsprüfungen von zertifizierter Hand. Für Kommunen, Wohnungsunternehmen, Versicherungen und Privateigentümer.</p>
       <div class="hero-cta">
         <a href="kontakt.html" class="cta-link cta-primary">Gutachten anfragen <span class="arrow">→</span></a>

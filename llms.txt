@@ -1,0 +1,31 @@
+# Spiehl Baumgutachten
+
+> Baumsachverständiger Lukas Spiehl bietet zertifizierte Baumgutachten, Baumkontrolle, Bruch- und Standsicherheitsprüfung sowie Holzwertermittlung im Odenwald und Rhein-Main-Gebiet (Hessen).
+
+## Wer
+
+Lukas Spiehl, Baumsachverständiger. Master Urban Tree and Forest Management (HAWK Göttingen), Bachelor Forstwirtschaft (Hochschule für Forstwirtschaft Rottenburg), FLL-zertifizierter Baumkontrolleur, Seilklettertechnik Stufe A und B, Sachkundiger für PSA gegen Absturz (DGUV).
+
+## Leistungen
+
+- Baumkontrolle: Beurteilung der Verkehrssicherheit von Bäumen, regelmäßige Sichtkontrolle nach anerkannten Methoden.
+- Bruchsicherheit: eingehende Untersuchung der inneren Holzsubstanz mittels Schalltomographie oder Bohrwiderstandsmessung.
+- Standsicherheit: Zugversuch zur Beurteilung der Verankerung im Wurzelraum, auch bei intaktem Stamm.
+- Holzwertermittlung: wirtschaftliche Bewertung von Baumbestand bei Schadensfällen, Versicherungsfragen oder Grundstücksbewertungen.
+
+## Gebiet
+
+Odenwaldkreis, Höchst im Odenwald, Michelstadt, Erbach, Bad König, Darmstadt, Frankfurt am Main, Aschaffenburg, Rhein-Main-Gebiet.
+
+## Kontakt
+
+- Telefon: +49 160 94656852
+- E-Mail: hallo@spiehl-arboristik.de
+- Sitz: Bessunger Str. 138a, 64347 Griesheim
+
+## Seiten
+
+- Start: https://noeffen.github.io/Spiehl/
+- Leistungen: https://noeffen.github.io/Spiehl/leistungen.html
+- Über mich: https://noeffen.github.io/Spiehl/ueber-mich.html
+- Kontakt: https://noeffen.github.io/Spiehl/kontakt.html

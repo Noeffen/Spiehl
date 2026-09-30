@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kontakt · Baumsachverständiger Spiehl</title>
+<title>Kontakt · Baumsachverständiger Spiehl im Odenwald</title>
 <meta name="description" content="Gutachten anfragen: Kontaktieren Sie den Baumsachverständigen Spiehl im Odenwald für Baumkontrolle, Bruch- und Standsicherheitsprüfung oder Holzwertermittlung.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://noeffen.github.io/Spiehl/kontakt.html">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://noeffen.github.io/Spiehl/kontakt.html">
-<meta property="og:title" content="Kontakt · Baumsachverständiger Spiehl">
+<meta property="og:title" content="Kontakt · Baumsachverständiger Spiehl im Odenwald">
 <meta property="og:description" content="Gutachten anfragen: Kontaktieren Sie den Baumsachverständigen Spiehl im Odenwald für Baumkontrolle, Bruch- und Standsicherheitsprüfung oder Holzwertermittlung.">
 <meta property="og:image" content="https://noeffen.github.io/Spiehl/img/og-image.jpg">
 <meta property="og:image:width" content="1200">
@@ -19,7 +19,7 @@
 <meta property="og:site_name" content="Baumsachverständiger Spiehl">
 <meta property="og:locale" content="de_DE">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Kontakt · Baumsachverständiger Spiehl">
+<meta name="twitter:title" content="Kontakt · Baumsachverständiger Spiehl im Odenwald">
 <meta name="twitter:description" content="Gutachten anfragen: Kontaktieren Sie den Baumsachverständigen Spiehl im Odenwald für Baumkontrolle, Bruch- und Standsicherheitsprüfung oder Holzwertermittlung.">
 <meta name="twitter:image" content="https://noeffen.github.io/Spiehl/img/og-image.jpg">
 
@@ -56,10 +56,13 @@
   :root {
     --forest: #12201A; --gold: #A9863C; --gold-pale: #C9AC6E;
     --paper: #F1ECDC; --line: rgba(18,32,26,0.14); --line-dark: rgba(241,236,220,0.14);
-    --ink: #16211B; --muted: #6C7566;
+    --ink: #16211B; --muted: #5D6456;
   }
   body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--paper); color: var(--ink); -webkit-font-smoothing: antialiased; }
   a { text-decoration: none; color: inherit; }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  .skip-link { position: absolute; left: -9999px; top: 0; z-index: 9999; background: var(--forest); color: var(--paper); padding: .8rem 1.4rem; font-size: .85rem; font-weight: 600; }
+  .skip-link:focus { left: 1rem; top: 1rem; }
   .container { max-width: 1440px; margin: 0 auto; padding: 0 clamp(1.4rem, 4vw, 4rem); }
 
   header { position: fixed; top: 0; left: 0; right: 0; z-index: 600; padding: 1.6rem clamp(1.4rem, 4vw, 2.5rem); transition: background .3s, padding .3s, box-shadow .3s; }
@@ -127,7 +130,8 @@
     width: 100%; padding: .85rem 1rem; border: 1px solid var(--line); border-radius: 2px;
     background: var(--paper); font-family: inherit; font-size: .92rem; color: var(--ink); transition: border-color .2s;
   }
-  .fg input:focus, .fg select:focus, .fg textarea:focus { outline: none; border-color: var(--gold); }
+  .fg input:focus, .fg select:focus, .fg textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(169,134,60,.25); }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
   .fg textarea { resize: vertical; min-height: 120px; }
   .submit-btn {
     display: inline-flex; align-items: baseline; gap: .5rem; margin-top: .6rem;
@@ -183,6 +187,8 @@
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+
 <header id="siteHeader">
   <div class="nav-inner">
     <a href="index.html" class="brand">Spiehl <em>Baumgutachten</em></a>
@@ -203,10 +209,10 @@
   <a href="tel:+4916094656852" class="mm-phone">+49 160 94656852</a>
 </div>
 
-<section class="page-hero">
+<section class="page-hero" id="main-content">
   <div class="container">
     <div class="kicker reveal">// Kontakt</div>
-    <h1 class="reveal">Sprechen wir über <em>Ihren Baum.</em></h1>
+    <h1 class="reveal">Sprechen wir über <em>Ihren Baum.</em><span class="sr-only"> Kontakt zum Baumsachverständigen Lukas Spiehl im Odenwald.</span></h1>
     <p class="reveal">Schildern Sie kurz Ihr Anliegen, ich melde mich zeitnah mit einem Vorschlag für einen Vor-Ort-Termin.</p>
   </div>
 </section>
@@ -240,13 +246,13 @@
 
     <form id="contactForm" class="reveal d1">
       <div class="form-row">
-        <div class="fg"><label>NAME *</label><input type="text" id="name" required placeholder="Max Mustermann"></div>
-        <div class="fg"><label>TELEFON</label><input type="tel" id="phone" placeholder="Für Rückfragen"></div>
+        <div class="fg"><label for="name">NAME *</label><input type="text" id="name" name="name" required placeholder="Max Mustermann"></div>
+        <div class="fg"><label for="phone">TELEFON</label><input type="tel" id="phone" name="phone" placeholder="Für Rückfragen"></div>
       </div>
-      <div class="fg"><label>E-MAIL *</label><input type="email" id="email" required placeholder="max@beispiel.de"></div>
+      <div class="fg"><label for="email">E-MAIL *</label><input type="email" id="email" name="email" required placeholder="max@beispiel.de"></div>
       <div class="fg">
-        <label>WORUM GEHT ES?</label>
-        <select id="anliegen">
+        <label for="anliegen">WORUM GEHT ES?</label>
+        <select id="anliegen" name="anliegen">
           <option value="">-- Bitte wählen --</option>
           <option>Baumkontrolle</option>
           <option>Bruchsicherheit</option>
@@ -255,7 +261,7 @@
           <option>Sonstiges</option>
         </select>
       </div>
-      <div class="fg"><label>NACHRICHT *</label><textarea id="message" required placeholder="Beschreiben Sie kurz den Baum, den Standort und Ihr Anliegen..."></textarea></div>
+      <div class="fg"><label for="message">NACHRICHT *</label><textarea id="message" name="message" required placeholder="Beschreiben Sie kurz den Baum, den Standort und Ihr Anliegen..."></textarea></div>
       <button type="submit" class="submit-btn">Anfrage senden <span class="arrow">→</span></button>
       <p class="form-note">Beim Absenden öffnet sich Ihr E-Mail-Programm mit vorausgefüllter Nachricht, es werden keine Daten an einen Server übertragen. Mehr in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
     </form>
