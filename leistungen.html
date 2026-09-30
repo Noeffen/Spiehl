@@ -2,6 +2,9 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Leistungen im Odenwald · Baumsachverständiger Spiehl</title>
 <meta name="description" content="Baumkontrolle, Bruchsicherheit, Standsicherheit und Holzwertermittlung - Leistungen des Baumsachverständigen Spiehl im Odenwald & Rhein-Main-Gebiet.">
@@ -74,7 +77,11 @@
   header { position: fixed; top: 0; left: 0; right: 0; z-index: 600; padding: 1.6rem clamp(1.4rem, 4vw, 2.5rem); transition: background .3s, padding .3s, box-shadow .3s; }
   header.scrolled { background: rgba(241,236,220,0.92); backdrop-filter: blur(14px); padding: 1.1rem clamp(1.4rem, 4vw, 2.5rem); box-shadow: 0 1px 0 var(--line); }
   .nav-inner { display: flex; justify-content: space-between; align-items: center; }
-  .brand { font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.2rem; letter-spacing: -.01em; color: var(--paper); transition: color .3s; }
+  .brand { display: inline-flex; align-items: center; gap: .6rem; font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.2rem; letter-spacing: -.01em; color: var(--paper); transition: color .3s; }
+  .brand img { height: 1.7em; width: auto; display: block; }
+  .brand .icon-dark { display: none; }
+  header.scrolled .brand .icon-light { display: none; }
+  header.scrolled .brand .icon-dark { display: block; }
   .brand em { font-style: italic; color: var(--gold-pale); }
   header.scrolled .brand { color: var(--forest); }
   header.scrolled .brand em { color: var(--gold); }
@@ -154,7 +161,7 @@
 
   footer { background: var(--forest); color: rgba(241,236,220,.5); padding: 3.5rem 0 2rem; }
   .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--line-dark); }
-  .footer-grid .brand { color: var(--paper); margin-bottom: .8rem; display: inline-block; }
+  .footer-grid .brand { color: var(--paper); margin-bottom: .8rem; }
   .footer-grid p { font-size: .85rem; line-height: 1.7; max-width: 320px; }
   .footer-col h5 { font-family: 'Space Mono', monospace; font-size: .66rem; letter-spacing: .08em; color: rgba(241,236,220,.4); margin-bottom: 1rem; }
   .footer-col a { display: block; font-size: .85rem; margin-bottom: .7rem; color: rgba(241,236,220,.65); transition: color .2s; }
@@ -187,7 +194,11 @@
 
 <header id="siteHeader">
   <div class="nav-inner">
-    <a href="index.html" class="brand">Spiehl <em>Baumgutachten</em></a>
+    <a href="index.html" class="brand">
+      <img src="img/logo-icon-light.png" alt="" class="icon-light" width="240" height="237">
+      <img src="img/logo-icon-dark.png" alt="" class="icon-dark" width="240" height="237">
+      Spiehl <em>Baumgutachten</em>
+    </a>
     <div class="nav-links">
       <a href="leistungen.html" class="link active">Leistungen</a>
       <a href="ueber-mich.html" class="link">Über mich</a>
@@ -326,7 +337,7 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <a href="index.html" class="brand">Spiehl <em style="color:#C9AC6E;font-style:italic;">Baumgutachten</em></a>
+        <a href="index.html" class="brand"><img src="img/logo-icon-light.png" alt="" width="240" height="237">Spiehl <em style="color:#C9AC6E;font-style:italic;">Baumgutachten</em></a>
         <p>Zertifizierte Baumgutachten und Sicherheitsprüfungen im Odenwald und Rhein-Main-Gebiet.</p>
       </div>
       <div class="footer-col">

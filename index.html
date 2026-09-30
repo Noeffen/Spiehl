@@ -2,6 +2,9 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Baumsachverständiger Spiehl - Gutachten & Baumkontrolle im Odenwald</title>
 <meta name="description" content="Zertifizierte Baumgutachten, Baumkontrolle, Bruch- und Standsicherheitsprüfung im Odenwald & Rhein-Main-Gebiet. Gerichtsfeste Gutachten, persönlich vor Ort.">
@@ -79,7 +82,8 @@
   /* ── NAV: full-width, edge-anchored (no centered container) ── */
   header { position: absolute; top: 0; left: 0; right: 0; z-index: 20; padding: 1.6rem clamp(1.4rem, 4vw, 2.5rem); }
   .nav-inner { display: flex; justify-content: space-between; align-items: center; }
-  .brand { font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.2rem; letter-spacing: -.01em; color: var(--paper); }
+  .brand { display: inline-flex; align-items: center; gap: .6rem; font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.2rem; letter-spacing: -.01em; color: var(--paper); }
+  .brand img { height: 1.7em; width: auto; display: block; }
   .brand em { color: var(--gold-pale); }
   .nav-links { display: flex; align-items: center; gap: 2.4rem; }
   .nav-links a.link { font-size: .82rem; font-weight: 500; color: var(--paper); opacity: .65; transition: opacity .2s; }
@@ -160,7 +164,7 @@
 <div class="page">
   <header>
     <div class="nav-inner">
-      <a href="index.html" class="brand">Spiehl <em>Baumgutachten</em></a>
+      <a href="index.html" class="brand"><img src="img/logo-icon-light.png" alt="" width="240" height="237">Spiehl <em>Baumgutachten</em></a>
       <div class="nav-links">
         <a href="leistungen.html" class="link">Leistungen</a>
         <a href="ueber-mich.html" class="link">Über mich</a>
