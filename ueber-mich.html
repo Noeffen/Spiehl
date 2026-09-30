@@ -89,25 +89,21 @@
   .about-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 3.5rem; align-items: start; }
   .photo-box {
     aspect-ratio: 4/5; overflow: hidden; background: var(--forest);
-    display: flex; align-items: center; justify-content: center;
     position: relative; border: 1px solid var(--line);
   }
+  .photo-box img { width: 100%; height: 100%; object-fit: cover; }
   .photo-box::before {
-    content: ''; position: absolute; inset: 10px; border: 1px dashed var(--line-dark); pointer-events: none;
+    content: ''; position: absolute; inset: 10px; border: 1px solid rgba(241,236,220,.22); pointer-events: none;
   }
-  .photo-box svg { width: 32%; opacity: .3; color: var(--gold-pale); }
-  .photo-note { position: absolute; bottom: 1.4rem; left: 1.4rem; right: 1.4rem; font-family: 'Space Mono', monospace; font-size: .66rem; letter-spacing: .06em; text-transform: uppercase; color: rgba(241,236,220,.45); text-align: center; }
   .about-text h2 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 2rem; color: var(--forest); margin-bottom: 1.2rem; letter-spacing: -.01em; }
   .about-text h2 em { font-style: italic; color: var(--gold); font-weight: 400; }
   .about-text p { font-size: .98rem; line-height: 1.85; color: var(--muted); margin-bottom: 1.2rem; max-width: 560px; }
-  .placeholder { background: #fef3c7; color: #92660c; padding: .05rem .4rem; border-radius: 4px; font-weight: 600; }
 
   .cred-label { font-family: 'Space Mono', monospace; font-size: .64rem; letter-spacing: .08em; color: var(--gold); display: block; margin-top: 2.2rem; margin-bottom: .3rem; }
   .cred-list { display: flex; flex-direction: column; gap: 0; }
-  .cred-row { display: flex; gap: 1rem; align-items: baseline; padding: 1rem 0; border-top: 1px solid var(--line); }
+  .cred-row { display: flex; gap: 1rem; align-items: baseline; padding: 1rem 0; border-top: 1px solid var(--line); font-size: .92rem; line-height: 1.6; color: var(--ink); }
   .cred-list .cred-row:last-child { border-bottom: 1px solid var(--line); }
   .cred-idx { font-family: 'Space Mono', monospace; font-size: .78rem; color: var(--gold); flex-shrink: 0; }
-  .cred-row span.placeholder { font-size: .92rem; line-height: 1.6; }
 
   .approach { background: var(--forest); color: var(--paper); padding: 5.5rem 0; }
   .approach .kicker { color: var(--gold-pale); }
@@ -185,21 +181,20 @@
 <section class="about-section">
   <div class="container about-grid">
     <div class="photo-box reveal">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 21s-7-7.2-7-12a7 7 0 1 1 14 0c0 4.8-7 12-7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg>
-      <div class="photo-note">Porträtfoto folgt</div>
+      <img src="img/portrait.jpg" alt="Lukas Spiehl bei der Baumkletterarbeit" width="933" height="1400">
     </div>
     <div class="about-text reveal d1">
-      <h2>Herr <span class="placeholder">[Vorname] Spiehl</span></h2>
+      <h2>Lukas Spiehl</h2>
       <p>Mein Anspruch ist es, Baumrisiken nicht pauschal, sondern anhand des Einzelfalls fachlich fundiert zu beurteilen, mit anerkannten Verfahren und einer Dokumentation, die auch vor Behörden und Gerichten Bestand hat.</p>
-      <p><span class="placeholder">[Kurzer persönlicher Werdegang: seit wann tätig, beruflicher Hintergrund, ggf. Ausbildung im Bereich Forstwirtschaft/Arboristik]</span></p>
+      <p>Nach einem Bachelorstudium der Forstwirtschaft an der Hochschule für Forstwirtschaft Rottenburg und einem Masterstudium im Bereich Urban Tree and Forest Management an der HAWK Göttingen arbeite ich seit mehreren Jahren praktisch und gutachterlich mit Bäumen, von der Kletterarbeit in der Krone bis zur sachverständigen Beurteilung am Boden.</p>
       <p>Jeder Auftrag wird persönlich von mir bearbeitet, von der ersten Anfrage über den Vor-Ort-Termin bis zum fertigen Gutachten.</p>
 
       <span class="cred-label">QUALIFIKATIONEN</span>
       <div class="cred-list">
-        <div class="cred-row"><span class="cred-idx">01</span><span class="placeholder">[Zertifizierung 1 einfügen, z.B. Ausbildung/Lehrgang]</span></div>
-        <div class="cred-row"><span class="cred-idx">02</span><span class="placeholder">[Zertifizierung 2 einfügen]</span></div>
-        <div class="cred-row"><span class="cred-idx">03</span><span class="placeholder">[Mitgliedschaft in Fachverband, falls vorhanden]</span></div>
-        <div class="cred-row"><span class="cred-idx">04</span><span class="placeholder">[Jahre Berufserfahrung / bisherige Tätigkeit]</span></div>
+        <div class="cred-row"><span class="cred-idx">01</span>Master Urban Tree and Forest Management, HAWK Göttingen</div>
+        <div class="cred-row"><span class="cred-idx">02</span>Bachelor Forstwirtschaft, Hochschule für Forstwirtschaft Rottenburg</div>
+        <div class="cred-row"><span class="cred-idx">03</span>FLL-zertifizierter Baumkontrolleur, Seilklettertechnik Stufe A &amp; B</div>
+        <div class="cred-row"><span class="cred-idx">04</span>Sachkundiger für PSA gegen Absturz (DGUV), mehrjährige Praxis in Baumpflege und Baumkontrolle</div>
       </div>
     </div>
   </div>

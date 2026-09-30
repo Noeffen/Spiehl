@@ -34,7 +34,7 @@
     {
       "@type": "Person",
       "@id": "https://baumgutachten-spiehl.de/#person",
-      "name": "Spiehl",
+      "name": "Lukas Spiehl",
       "jobTitle": "Baumsachverständiger",
       "worksFor": {"@id": "https://baumgutachten-spiehl.de/#business"}
     }
@@ -83,8 +83,13 @@
   .cta-secondary { font-family: 'Inter', sans-serif; font-weight: 600; font-size: .85rem; letter-spacing: .01em; color: rgba(241,236,220,.6); border-color: rgba(241,236,220,.32); }
   .cta-secondary:hover { color: var(--paper); border-color: var(--gold-pale); }
 
+  /* ── HERO PHOTO (real photograph, gradient into the dark ground) ── */
+  .hero-photo { position: absolute; inset: 0; z-index: 0; }
+  .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 72% 28%; }
+  .hero-photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(100deg, var(--forest) 0%, var(--forest) 22%, rgba(18,32,26,.88) 40%, rgba(18,32,26,.55) 58%, rgba(18,32,26,.22) 78%, rgba(18,32,26,.05) 100%); }
+
   /* ── HERO DIAGRAM (pure background, no card on top) ── */
-  .diagram { position: absolute; top: 50%; right: -14%; transform: translateY(-50%); width: 64vw; max-width: 900px; aspect-ratio: 1; pointer-events: none; z-index: 1; opacity: .4; }
+  .diagram { position: absolute; top: 50%; right: -14%; transform: translateY(-50%); width: 64vw; max-width: 900px; aspect-ratio: 1; pointer-events: none; z-index: 1; opacity: .3; }
   .diagram circle { fill: none; stroke: var(--gold); }
   .diagram .tick { stroke: var(--gold-pale); }
   .diagram text { fill: var(--gold-pale); font-family: 'Space Mono', monospace; }
@@ -111,7 +116,8 @@
   .legal-links a:hover { color: rgba(241,236,220,.65); }
 
   @media(max-width: 900px) {
-    .diagram { opacity: .3; width: 80vw; right: -30%; }
+    .diagram { opacity: .22; width: 80vw; right: -30%; }
+    .hero-photo::after { background: linear-gradient(100deg, var(--forest) 0%, var(--forest) 15%, rgba(18,32,26,.9) 32%, rgba(18,32,26,.6) 52%, rgba(18,32,26,.3) 72%, rgba(18,32,26,.1) 100%); }
   }
 
   @media(max-width: 768px) {
@@ -120,7 +126,8 @@
     header { position: relative; padding: 1.4rem; }
     .nav-links .link { display: none; }
     .hero-inner { padding: 2.4rem 1.4rem 6rem; height: auto; }
-    .diagram { position: absolute; top: 6rem; right: -40%; width: 100vw; opacity: .22; }
+    .hero-photo::after { background: linear-gradient(180deg, rgba(18,32,26,.35) 0%, var(--forest) 62%, var(--forest) 100%); }
+    .diagram { position: absolute; top: 6rem; right: -40%; width: 100vw; opacity: .16; }
     .badges { max-width: 100%; }
     .bottom-nav { position: relative; left: auto; bottom: auto; margin: 2rem 1.4rem 1rem; flex-wrap: wrap; gap: 1.4rem 1.8rem; }
     .legal-links { position: relative; right: auto; bottom: auto; margin: 0 1.4rem 2rem; }
@@ -145,6 +152,10 @@
       </div>
     </div>
   </header>
+
+  <div class="hero-photo">
+    <img src="img/klettern.jpg" alt="Baumsachverständiger Spiehl bei der Untersuchung in der Krone" width="933" height="1400">
+  </div>
 
   <svg class="diagram" viewBox="0 0 400 400">
     <circle cx="200" cy="200" r="40" stroke-width="1" opacity=".3"/>
