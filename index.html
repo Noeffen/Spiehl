@@ -138,10 +138,12 @@
     .page { height: auto; min-height: 100dvh; overflow-x: hidden; overflow-y: visible; }
     header { position: relative; padding: 1.4rem; }
     .nav-links .link { display: none; }
-    .hero-inner { padding: 2.4rem 1.4rem 6rem; height: auto; }
-    .hero-photo::after { background: linear-gradient(180deg, rgba(18,32,26,.35) 0%, var(--forest) 62%, var(--forest) 100%); }
-    .diagram { position: absolute; top: 6rem; right: -40%; width: 100vw; opacity: .16; }
-    .badges { max-width: 100%; }
+    .hero-photo { top: 0; left: 0; right: 0; bottom: auto; height: 42vh; }
+    .hero-photo img { object-position: 62% 20%; }
+    .hero-photo::after { background: linear-gradient(180deg, rgba(18,32,26,.6) 0%, rgba(18,32,26,.78) 60%, var(--forest) 100%); }
+    .diagram { display: none; }
+    .hero-inner { padding: 34vh 1.4rem 6rem; height: auto; }
+    .badges { flex-direction: column; align-items: flex-start; gap: .7rem; max-width: 100%; }
     .bottom-nav { position: relative; left: auto; bottom: auto; margin: 2rem 1.4rem 1rem; flex-wrap: wrap; gap: 1.4rem 1.8rem; }
     .legal-links { position: relative; right: auto; bottom: auto; margin: 0 1.4rem 2rem; }
   }
