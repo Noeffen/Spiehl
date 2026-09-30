@@ -22,6 +22,9 @@
   :root { --forest: #12201A; --gold: #A9863C; --cream: #F1ECDC; --cream-line: rgba(18,32,26,0.14); --ink: #16211B; --muted: #5D6456; }
   body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--ink); -webkit-font-smoothing: antialiased; }
   a { color: var(--forest); }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .skip-link { position: absolute; left: -9999px; top: 0; z-index: 9999; background: var(--forest); color: var(--cream); padding: .8rem 1.4rem; font-size: .85rem; font-weight: 600; }
+  .skip-link:focus { left: 1rem; top: 1rem; }
   .container { max-width: 800px; margin: 0 auto; padding: 0 2.5rem; }
   nav { padding: 1.6rem 0; }
   .nav-inner { max-width: 1440px; margin: 0 auto; padding: 0 clamp(1.4rem, 4vw, 2.5rem); display: flex; justify-content: space-between; align-items: center; }
@@ -43,11 +46,12 @@
 </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
 <nav><div class="nav-inner">
   <a href="index.html" class="brand">Spiehl <em>Baumgutachten</em></a>
   <a href="index.html" class="back">← Zurück zur Startseite</a>
 </div></nav>
-<main><div class="container">
+<main id="main-content"><div class="container">
   <div class="kicker">Rechtliches</div>
   <h1>Impres<em>sum.</em></h1>
 
