@@ -99,6 +99,18 @@
   .reveal.visible { opacity: 1; transform: translateY(0); }
   .d1{transition-delay:.06s}.d2{transition-delay:.14s}.d3{transition-delay:.22s}.d4{transition-delay:.3s}
 
+  .process { background: var(--forest); color: var(--paper); padding: 5.5rem 0; }
+  .process .kicker { color: var(--gold-pale); }
+  .process .kicker::before { background: var(--gold-pale); }
+  .process h2 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(1.8rem, 3vw, 2.4rem); letter-spacing: -.02em; margin-bottom: 2.6rem; }
+  .process h2 em { font-style: italic; color: var(--gold-pale); }
+  .process-list { display: flex; flex-direction: column; }
+  .p-step { display: grid; grid-template-columns: 50px 1fr; gap: 2rem; padding: 1.9rem 0; border-top: 1px solid var(--line-dark); align-items: start; }
+  .process-list .p-step:last-child { border-bottom: 1px solid var(--line-dark); }
+  .p-num { font-family: 'Space Mono', monospace; font-size: .9rem; color: var(--gold-pale); padding-top: .3rem; }
+  .p-step h4 { font-family: 'Fraunces', serif; font-size: 1.15rem; font-weight: 500; margin-bottom: .4rem; }
+  .p-step p { font-size: .88rem; line-height: 1.7; color: rgba(241,236,220,.6); max-width: 560px; }
+
   @media(max-width: 900px) {
     .contact-grid { grid-template-columns: 1fr; }
     .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
@@ -149,8 +161,12 @@
         <span class="info-label">EINSATZGEBIET</span>
         <div class="area-list">
           <span class="area-item">Odenwaldkreis</span>
+          <span class="area-item">Höchst i. Odw.</span>
+          <span class="area-item">Michelstadt</span>
+          <span class="area-item">Erbach</span>
+          <span class="area-item">Bad König</span>
           <span class="area-item">Darmstadt</span>
-          <span class="area-item">Frankfurt</span>
+          <span class="area-item">Frankfurt am Main</span>
           <span class="area-item">Aschaffenburg</span>
         </div>
       </div>
@@ -177,6 +193,27 @@
       <button type="submit" class="submit-btn">Anfrage senden →</button>
       <p class="form-note">Beim Absenden öffnet sich Ihr E-Mail-Programm mit vorausgefüllter Nachricht, es werden keine Daten an einen Server übertragen. Mehr in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
     </form>
+  </div>
+</section>
+
+<section class="process">
+  <div class="container">
+    <div class="kicker reveal">// Ablauf</div>
+    <h2 class="reveal d1">So geht es <em>weiter.</em></h2>
+    <div class="process-list">
+      <div class="p-step reveal d1">
+        <div class="p-num">01</div>
+        <div><h4>Anfrage &amp; Terminabstimmung</h4><p>Sie schildern kurz Ihr Anliegen. Ich melde mich zeitnah mit einem Vorschlag für einen Vor-Ort-Termin.</p></div>
+      </div>
+      <div class="p-step reveal d2">
+        <div class="p-num">02</div>
+        <div><h4>Untersuchung vor Ort</h4><p>Je nach Fragestellung kommen visuelle Kontrolle, Schalltomographie, Bohrwiderstandsmessung oder Zugversuch zum Einsatz.</p></div>
+      </div>
+      <div class="p-step reveal d3">
+        <div class="p-num">03</div>
+        <div><h4>Schriftliches Gutachten</h4><p>Sie erhalten einen verständlichen, nachvollziehbaren Bericht mit Einschätzung, Fotodokumentation und ggf. Handlungsempfehlung.</p></div>
+      </div>
+    </div>
   </div>
 </section>
 

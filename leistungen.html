@@ -75,6 +75,19 @@
   .svc-tags span { color: var(--forest); font-weight: 600; }
   .svc-tags .sep { color: var(--gold); margin: 0 .6rem; }
 
+  .why { background: var(--forest); color: var(--paper); padding: 5.5rem 0; }
+  .why .kicker { color: var(--gold-pale); }
+  .why .kicker::before { background: var(--gold-pale); }
+  .why h2 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(1.8rem, 3vw, 2.4rem); letter-spacing: -.02em; margin-bottom: 1.1rem; max-width: 620px; }
+  .why h2 em { font-style: italic; color: var(--gold-pale); }
+  .why > .container > p { font-size: .96rem; line-height: 1.8; color: rgba(241,236,220,.6); max-width: 600px; }
+  .why-list { margin-top: 2.6rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--line-dark); }
+  .why-item { padding: 1.9rem 1.8rem 1.9rem 0; border-right: 1px solid var(--line-dark); }
+  .why-list .why-item:last-child { border-right: none; padding-right: 0; }
+  .why-num { font-family: 'Fraunces', serif; font-style: italic; font-size: 1.6rem; color: var(--gold-pale); opacity: .75; margin-bottom: .8rem; }
+  .why-item h4 { font-size: .96rem; font-weight: 600; margin-bottom: .6rem; }
+  .why-item p { font-size: .85rem; line-height: 1.7; color: rgba(241,236,220,.55); }
+
   .cta-strip { background: var(--forest); color: var(--paper); padding: 3.4rem 3rem; display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap; margin: 5rem 0; }
   .cta-strip h3 { font-family: 'Fraunces', serif; font-size: 1.7rem; font-weight: 500; max-width: 420px; }
   .cta-strip h3 em { font-style: italic; color: var(--gold-pale); }
@@ -94,6 +107,8 @@
 
   @media(max-width: 900px) {
     .svc-detail-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+    .why-list { grid-template-columns: 1fr; }
+    .why-item { border-right: none; border-bottom: 1px solid var(--line-dark); padding: 1.6rem 0; }
     .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
     .nav-links .link { display: none; }
   }
@@ -122,6 +137,31 @@
     <div class="kicker reveal">// Leistungen</div>
     <h1 class="reveal">Vier Prüfverfahren, <em>ein Ziel: Klarheit.</em></h1>
     <p class="reveal">Jede Untersuchung wird individuell auf Ihre Fragestellung abgestimmt, von der einfachen Sichtkontrolle bis zur eingehenden technischen Untersuchung.</p>
+  </div>
+</section>
+
+<section class="why">
+  <div class="container">
+    <div class="kicker reveal">// Warum ein Gutachten</div>
+    <h2 class="reveal d1">Sicherheit, die <em>standhält.</em></h2>
+    <p class="reveal d2">Ein Baum kann in Sekunden zur Gefahr werden, und ein unklares Risiko schnell zur Haftungsfrage. Ein fachlich fundiertes Gutachten schafft Klarheit, bevor etwas passiert.</p>
+    <div class="why-list">
+      <div class="why-item reveal d1">
+        <div class="why-num">01</div>
+        <h4>Rechtssicherheit</h4>
+        <p>Als Grundstückseigentümer sind Sie zur Verkehrssicherung verpflichtet. Ein dokumentiertes Gutachten schützt Sie im Schadensfall.</p>
+      </div>
+      <div class="why-item reveal d2">
+        <div class="why-num">02</div>
+        <h4>Objektive Einschätzung</h4>
+        <p>Statt Vermutungen liefert eine fachgerechte Untersuchung belastbare, nachvollziehbare Ergebnisse mit anerkannten Messverfahren.</p>
+      </div>
+      <div class="why-item reveal d3">
+        <div class="why-num">03</div>
+        <h4>Frühzeitig statt zu spät</h4>
+        <p>Viele Risiken lassen sich rechtzeitig erkennen und mit gezielten Maßnahmen statt einer vollständigen Fällung beheben.</p>
+      </div>
+    </div>
   </div>
 </section>
 

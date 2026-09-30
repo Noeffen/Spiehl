@@ -49,187 +49,119 @@
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   :root {
-    --forest: #12201A;
-    --forest-2: #1A2E22;
-    --gold: #A9863C;
-    --gold-pale: #C9AC6E;
-    --paper: #F1ECDC;
-    --paper-2: #E9E1C9;
-    --line: rgba(18,32,26,0.14);
-    --line-dark: rgba(241,236,220,0.14);
-    --ink: #16211B;
-    --muted: #6C7566;
+    --forest: #12201A; --gold: #A9863C; --gold-pale: #C9AC6E;
+    --paper: #F1ECDC; --line: rgba(18,32,26,0.14); --line-dark: rgba(241,236,220,0.14);
+    --ink: #16211B; --muted: #6C7566;
   }
-  html { scroll-behavior: smooth; }
+  html, body { height: 100%; overflow: hidden; background: var(--forest); }
   body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: var(--paper); color: var(--ink);
-    -webkit-font-smoothing: antialiased; overflow-x: hidden;
+    color: var(--paper); -webkit-font-smoothing: antialiased;
   }
   a { text-decoration: none; color: inherit; }
-  .serif { font-family: 'Fraunces', serif; }
-  .mono { font-family: 'Space Mono', monospace; }
-  .container { max-width: 1180px; margin: 0 auto; padding: 0 2.5rem; }
   em { font-style: italic; }
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 2.5rem; }
+
+  .page { position: relative; width: 100vw; height: 100vh; overflow: hidden; }
 
   /* ── NAV ── */
-  header { position: fixed; top: 0; left: 0; right: 0; z-index: 500; padding: 1.5rem 0; transition: background .3s, padding .3s, box-shadow .3s; }
-  header.scrolled { background: rgba(241,236,220,0.92); backdrop-filter: blur(14px); padding: 1.1rem 0; box-shadow: 0 1px 0 var(--line); }
+  header { position: absolute; top: 0; left: 0; right: 0; z-index: 20; padding: 1.6rem 0; }
   .nav-inner { display: flex; justify-content: space-between; align-items: center; }
-  .brand { font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.2rem; letter-spacing: -.01em; color: var(--forest); }
-  .brand em { color: var(--gold); }
+  .brand { font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.2rem; letter-spacing: -.01em; color: var(--paper); }
+  .brand em { color: var(--gold-pale); }
   .nav-links { display: flex; align-items: center; gap: 2.4rem; }
-  .nav-links a.link { font-size: .82rem; font-weight: 500; color: var(--ink); opacity: .6; transition: opacity .2s; letter-spacing: .01em; }
-  .nav-links a.link:hover, .nav-links a.link.active { opacity: 1; }
-  .nav-phone { font-size: .78rem; font-weight: 600; letter-spacing: .04em; color: var(--forest); border-bottom: 1px solid var(--forest); padding-bottom: 2px; transition: color .2s, border-color .2s; }
-  .nav-phone:hover { color: var(--gold); border-color: var(--gold); }
+  .nav-links a.link { font-size: .82rem; font-weight: 500; color: var(--paper); opacity: .65; transition: opacity .2s; }
+  .nav-links a.link:hover { opacity: 1; }
+  .nav-phone { font-size: .78rem; font-weight: 600; letter-spacing: .04em; color: var(--paper); border-bottom: 1px solid var(--gold-pale); padding-bottom: 2px; transition: opacity .2s; }
+  .nav-phone:hover { opacity: .8; }
 
-  /* ── BUTTONS (flat, no gradients, editorial) ── */
+  /* ── BUTTONS ── */
   .btn { display: inline-flex; align-items: center; gap: .55rem; font-size: .82rem; font-weight: 600; letter-spacing: .01em; padding: .95rem 1.6rem; border-radius: 3px; transition: background .25s, color .25s, border-color .25s; }
-  .btn-solid { background: var(--forest); color: var(--paper); }
-  .btn-solid:hover { background: var(--gold); color: var(--forest); }
-  .btn-line { border: 1px solid var(--line-dark); color: #fff; }
+  .btn-solid { background: var(--gold); color: var(--forest); }
+  .btn-solid:hover { background: var(--gold-pale); }
+  .btn-line { border: 1px solid var(--line-dark); color: var(--paper); }
   .btn-line:hover { border-color: var(--gold-pale); color: var(--gold-pale); }
-  .btn-line-dark { border: 1px solid var(--line); color: var(--forest); }
-  .btn-line-dark:hover { border-color: var(--gold); color: var(--gold); }
 
-  /* ── HERO ── */
-  .hero { position: relative; min-height: 100vh; background: var(--forest); color: var(--paper); display: flex; align-items: center; overflow: hidden; padding-top: 6rem; }
-  .contour { position: absolute; inset: 0; opacity: .5; pointer-events: none; }
-  .diagram { position: absolute; top: 50%; right: -6%; transform: translateY(-50%); width: 54vw; max-width: 780px; aspect-ratio: 1; pointer-events: none; }
+  /* ── HERO DIAGRAM ── */
+  .diagram { position: absolute; top: 50%; right: -8%; transform: translateY(-50%); width: 58vw; max-width: 820px; aspect-ratio: 1; pointer-events: none; z-index: 1; opacity: .55; }
   .diagram circle { fill: none; stroke: var(--gold); }
   .diagram .tick { stroke: var(--gold-pale); }
   .diagram text { fill: var(--gold-pale); font-family: 'Space Mono', monospace; }
 
-  .hero-grid { position: relative; z-index: 2; display: grid; grid-template-columns: 1.2fr .8fr; gap: 3rem; align-items: center; width: 100%; }
-  .eyebrow { display: inline-flex; align-items: center; gap: .7rem; font-family: 'Space Mono', monospace; font-size: .72rem; letter-spacing: .06em; color: var(--gold-pale); margin-bottom: 1.8rem; }
+  /* ── HERO CONTENT ── */
+  .hero-inner { position: relative; z-index: 2; height: 100%; display: flex; align-items: center; }
+  .hero-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 3rem; align-items: center; width: 100%; }
+  .eyebrow { display: inline-flex; align-items: center; gap: .7rem; font-family: 'Space Mono', monospace; font-size: .72rem; letter-spacing: .06em; color: var(--gold-pale); margin-bottom: 1.6rem; }
   .eyebrow::before { content: ''; width: 26px; height: 1px; background: var(--gold-pale); }
-  .hero h1 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(2.7rem, 4.6vw, 4.6rem); line-height: 1.05; letter-spacing: -.02em; margin-bottom: 1.7rem; }
-  .hero h1 em { color: var(--gold-pale); font-weight: 400; }
-  .hero .lead { font-size: 1.04rem; line-height: 1.8; color: rgba(241,236,220,.62); max-width: 460px; margin-bottom: 2.4rem; font-weight: 300; }
-  .hero-cta { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 3.2rem; }
-  .badges { display: flex; flex-direction: column; gap: .7rem; border-top: 1px solid var(--line-dark); padding-top: 1.6rem; max-width: 460px; }
-  .badge { display: flex; align-items: baseline; gap: .8rem; font-size: .82rem; color: rgba(241,236,220,.55); }
-  .badge .mono { color: var(--gold-pale); font-size: .72rem; }
+  .hero-inner h1 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(2.4rem, 4.4vw, 4.2rem); line-height: 1.05; letter-spacing: -.02em; margin-bottom: 1.4rem; }
+  .hero-inner h1 em { color: var(--gold-pale); font-weight: 400; }
+  .hero-inner .lead { font-size: 1rem; line-height: 1.75; color: rgba(241,236,220,.62); max-width: 440px; margin-bottom: 2rem; font-weight: 300; }
+  .hero-cta { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.2rem; }
+  .badges { display: flex; flex-direction: column; gap: .6rem; border-top: 1px solid var(--line-dark); padding-top: 1.3rem; max-width: 440px; }
+  .badge { display: flex; align-items: baseline; gap: .8rem; font-size: .8rem; color: rgba(241,236,220,.55); }
+  .badge .mono { color: var(--gold-pale); font-size: .7rem; font-family: 'Space Mono', monospace; }
 
-  /* ── REPORT CARD (replaces generic glass card) ── */
-  .report-card { position: relative; background: var(--paper); color: var(--ink); padding: 2.2rem 2rem 1.8rem; box-shadow: 0 50px 90px -30px rgba(0,0,0,.55); }
+  /* ── REPORT CARD ── */
+  .report-card { position: relative; background: var(--paper); color: var(--ink); padding: 1.8rem 1.7rem 1.5rem; box-shadow: 0 50px 90px -30px rgba(0,0,0,.55); }
   .report-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: repeating-linear-gradient(90deg, var(--gold) 0 8px, transparent 8px 16px); }
   .report-seal {
-    position: absolute; top: -18px; right: 22px; width: 64px; height: 64px; border-radius: 50%;
+    position: absolute; top: -16px; right: 18px; width: 58px; height: 58px; border-radius: 50%;
     border: 1.5px dashed var(--gold); background: var(--paper); transform: rotate(-9deg);
     display: flex; align-items: center; justify-content: center; text-align: center;
-    font-family: 'Space Mono', monospace; font-size: .5rem; letter-spacing: .04em; text-transform: uppercase; color: var(--forest); line-height: 1.35;
+    font-family: 'Space Mono', monospace; font-size: .46rem; letter-spacing: .03em; text-transform: uppercase; color: var(--forest); line-height: 1.3;
   }
-  .rc-label { font-family: 'Space Mono', monospace; font-size: .66rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.3rem; }
-  .rc-row { display: flex; justify-content: space-between; align-items: baseline; padding: .85rem 0; border-top: 1px solid var(--line); gap: 1rem; }
+  .rc-label { font-family: 'Space Mono', monospace; font-size: .62rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.1rem; }
+  .rc-row { display: flex; justify-content: space-between; align-items: baseline; padding: .7rem 0; border-top: 1px solid var(--line); gap: 1rem; }
   .rc-row:first-of-type { border-top: none; }
-  .rc-row .rc-k { font-size: .82rem; color: var(--muted); }
-  .rc-row .rc-v { font-family: 'Fraunces', serif; font-size: .98rem; color: var(--forest); text-align: right; font-weight: 500; }
+  .rc-row .rc-k { font-size: .8rem; color: var(--muted); }
+  .rc-row .rc-v { font-family: 'Fraunces', serif; font-size: .92rem; color: var(--forest); text-align: right; font-weight: 500; }
 
-  .scroll-cue { position: absolute; bottom: 2.2rem; left: 2.5rem; display: flex; align-items: center; gap: .7rem; font-family: 'Space Mono', monospace; font-size: .66rem; letter-spacing: .1em; text-transform: uppercase; color: rgba(241,236,220,.35); z-index: 2; }
-  .scroll-cue .line { width: 30px; height: 1px; background: rgba(241,236,220,.35); animation: pulse-line 2s ease-in-out infinite; }
-  @keyframes pulse-line { 0%,100%{opacity:.3} 50%{opacity:1} }
-
-  /* ── REVEAL ── */
-  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
-  .d1{transition-delay:.05s}.d2{transition-delay:.12s}.d3{transition-delay:.2s}.d4{transition-delay:.3s}
-
-  /* ── SECTION SHARED ── */
-  section.pad { padding: 6.5rem 0; }
-  .kicker { display: inline-flex; align-items: center; gap: .7rem; font-family: 'Space Mono', monospace; font-size: .68rem; letter-spacing: .08em; color: var(--gold); margin-bottom: 1.3rem; }
-  .kicker::before { content: ''; width: 22px; height: 1px; background: var(--gold); }
-  h2.title { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(1.9rem, 3.2vw, 2.8rem); letter-spacing: -.02em; line-height: 1.1; color: var(--forest); margin-bottom: 1.2rem; }
-  h2.title em { color: var(--gold); font-weight: 400; }
-  .section-lead { font-size: 1rem; line-height: 1.8; color: var(--muted); max-width: 600px; }
-
-  /* ── SERVICES: editorial numbered list, not icon cards ── */
-  .svc-list { margin-top: 3rem; display: flex; flex-direction: column; }
-  .svc-row { display: grid; grid-template-columns: 60px 1.1fr 1.4fr; gap: 2.4rem; padding: 2.3rem 0; border-top: 1px solid var(--line); align-items: start; transition: background .25s; }
-  .svc-list .svc-row:last-child { border-bottom: 1px solid var(--line); }
-  .svc-row:hover { background: rgba(169,134,60,.05); }
-  .svc-num { font-family: 'Space Mono', monospace; font-size: .95rem; color: var(--gold); opacity: .8; padding-top: .3rem; }
-  .svc-row h3 { font-family: 'Fraunces', serif; font-size: 1.35rem; font-weight: 500; color: var(--forest); margin-bottom: .5rem; }
-  .svc-row p { font-size: .92rem; line-height: 1.75; color: var(--muted); margin-bottom: .9rem; max-width: 480px; }
-  .svc-link { font-size: .78rem; font-weight: 700; color: var(--forest); border-bottom: 1px solid var(--gold); padding-bottom: 1px; }
-
-  /* ── WHY: numbered rows on dark, no boxes ── */
-  .why { background: var(--forest); color: var(--paper); }
-  .why .kicker { color: var(--gold-pale); }
-  .why .kicker::before { background: var(--gold-pale); }
-  .why h2.title { color: var(--paper); }
-  .why h2.title em { color: var(--gold-pale); }
-  .why .section-lead { color: rgba(241,236,220,.6); }
-  .why-list { margin-top: 3rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--line-dark); }
-  .why-item { padding: 2rem 2rem 2rem 0; border-right: 1px solid var(--line-dark); }
-  .why-list .why-item:last-child { border-right: none; padding-right: 0; }
-  .why-num { font-family: 'Fraunces', serif; font-style: italic; font-size: 1.7rem; color: var(--gold-pale); opacity: .75; margin-bottom: .9rem; }
-  .why-item h4 { font-size: .98rem; font-weight: 600; margin-bottom: .6rem; }
-  .why-item p { font-size: .85rem; line-height: 1.7; color: rgba(241,236,220,.55); }
-
-  /* ── PROCESS ── */
-  .process-list { margin-top: 3rem; display: flex; flex-direction: column; }
-  .p-step { display: grid; grid-template-columns: 60px 1fr; gap: 2rem; padding: 2.1rem 0; border-top: 1px solid var(--line); align-items: start; }
-  .process-list .p-step:last-child { border-bottom: 1px solid var(--line); }
-  .p-num { font-family: 'Space Mono', monospace; font-size: .95rem; color: var(--gold); padding-top: .3rem; }
-  .p-step h4 { font-family: 'Fraunces', serif; font-size: 1.25rem; font-weight: 500; color: var(--forest); margin-bottom: .5rem; }
-  .p-step p { font-size: .92rem; line-height: 1.75; color: var(--muted); max-width: 560px; }
-
-  /* ── AREA ── */
-  .area-list { display: flex; flex-wrap: wrap; gap: 0 1.6rem; margin-top: 2.2rem; }
-  .area-item { font-family: 'Space Mono', monospace; font-size: .82rem; color: var(--forest); padding: .5rem 0; position: relative; }
-  .area-item::after { content: '/'; margin-left: 1.6rem; color: var(--gold); }
-  .area-item:last-child::after { content: ''; margin: 0; }
-
-  /* ── CTA STRIP ── */
-  .cta-strip { background: var(--forest); color: var(--paper); padding: 3.4rem 3rem; display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap; }
-  .cta-strip h3 { font-family: 'Fraunces', serif; font-size: 1.7rem; font-weight: 500; max-width: 420px; }
-  .cta-strip h3 em { color: var(--gold-pale); }
-
-  /* ── FOOTER ── */
-  footer { background: var(--forest); color: rgba(241,236,220,.5); padding: 3.5rem 0 2rem; margin-top: 2rem; }
-  .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--line-dark); }
-  .footer-grid .brand { color: var(--paper); margin-bottom: .8rem; display: inline-block; }
-  .footer-grid p { font-size: .85rem; line-height: 1.7; max-width: 320px; }
-  .footer-col h5 { font-family: 'Space Mono', monospace; font-size: .66rem; letter-spacing: .08em; color: rgba(241,236,220,.4); margin-bottom: 1rem; }
-  .footer-col a { display: block; font-size: .85rem; margin-bottom: .7rem; color: rgba(241,236,220,.65); transition: color .2s; }
-  .footer-col a:hover { color: var(--paper); }
-  .footer-bottom { display: flex; justify-content: space-between; padding-top: 1.6rem; font-size: .76rem; flex-wrap: wrap; gap: .6rem; }
+  /* ── BOTTOM NAV ── */
+  .bottom-nav { position: absolute; bottom: 2.4rem; left: 2.5rem; z-index: 20; display: flex; gap: 2rem; }
+  .bottom-nav a { font-family: 'Space Mono', monospace; font-size: .74rem; letter-spacing: .04em; color: rgba(241,236,220,.5); transition: color .2s; }
+  .bottom-nav a:hover { color: var(--gold-pale); }
+  .legal-links { position: absolute; bottom: 2.4rem; right: 2.5rem; z-index: 20; display: flex; gap: 1.4rem; }
+  .legal-links a { font-size: .7rem; color: rgba(241,236,220,.32); transition: color .2s; }
+  .legal-links a:hover { color: rgba(241,236,220,.65); }
 
   @media(max-width: 900px) {
     .hero-grid { grid-template-columns: 1fr; }
     .report-card { display: none; }
-    .why-list { grid-template-columns: 1fr; }
-    .why-item { border-right: none; border-bottom: 1px solid var(--line-dark); padding: 1.8rem 0; }
-    .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-    .nav-links .link { display: none; }
+    .diagram { opacity: .35; width: 80vw; right: -20%; }
   }
-  @media(max-width: 600px) {
+
+  @media(max-width: 768px) {
+    html, body { overflow: auto; height: auto; }
+    .page { height: auto; min-height: 100dvh; overflow: visible; }
+    header { position: relative; padding: 1.4rem 1.4rem 0; }
+    .nav-links .link { display: none; }
+    .hero-inner { padding: 2.4rem 1.4rem 6rem; height: auto; }
+    .diagram { position: absolute; top: 6rem; right: -30%; width: 100vw; opacity: .28; }
+    .badges { max-width: 100%; }
+    .bottom-nav { position: relative; left: auto; bottom: auto; margin: 2rem 1.4rem 1rem; flex-wrap: wrap; gap: 1.4rem 1.8rem; }
+    .legal-links { position: relative; right: auto; bottom: auto; margin: 0 1.4rem 2rem; }
+  }
+  @media(max-width: 480px) {
     .container { padding: 0 1.4rem; }
-    .svc-row { grid-template-columns: 40px 1fr; }
-    .svc-row > div:nth-child(2) { grid-column: 2; }
-    .svc-row > div:nth-child(3) { grid-column: 1 / -1; margin-top: .8rem; }
-    .p-step { grid-template-columns: 40px 1fr; }
-    .cta-strip { flex-direction: column; align-items: flex-start; }
+    .nav-inner { padding: 0 1.4rem; }
   }
 </style>
 </head>
 <body>
 
-<header id="siteHeader">
-  <div class="container nav-inner">
-    <a href="index.html" class="brand">Spiehl <em>Baumgutachten</em></a>
-    <div class="nav-links">
-      <a href="leistungen.html" class="link">Leistungen</a>
-      <a href="ueber-mich.html" class="link">Über mich</a>
-      <a href="kontakt.html" class="link">Kontakt</a>
-      <a href="tel:+491234567890" class="nav-phone">0123 456 7890</a>
+<div class="page">
+  <header>
+    <div class="container nav-inner">
+      <a href="index.html" class="brand">Spiehl <em>Baumgutachten</em></a>
+      <div class="nav-links">
+        <a href="leistungen.html" class="link">Leistungen</a>
+        <a href="ueber-mich.html" class="link">Über mich</a>
+        <a href="kontakt.html" class="link">Kontakt</a>
+        <a href="tel:+491234567890" class="nav-phone">0123 456 7890</a>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<section class="hero">
   <svg class="diagram" viewBox="0 0 400 400">
     <circle cx="200" cy="200" r="40" stroke-width="1" opacity=".3"/>
     <circle cx="200" cy="200" r="70" stroke-width="1" opacity=".35"/>
@@ -241,180 +173,44 @@
     <circle cx="200" cy="200" r="2.5" fill="#C9AC6E"/>
     <text x="206" y="40" font-size="11">Ø 84 cm</text>
   </svg>
-  <div class="container hero-grid">
-    <div>
-      <div class="eyebrow reveal">// Baumsachverständiger · Odenwald &amp; Rhein-Main</div>
-      <h1 class="reveal d1">Bäume sicher <em>einschätzen.</em></h1>
-      <p class="lead reveal d2">Fundierte Baumgutachten, Kontrollen und Sicherheitsprüfungen von zertifizierter Hand. Für Kommunen, Wohnungsunternehmen, Versicherungen und Privateigentümer, nachvollziehbar dokumentiert und notfalls auch gerichtsfest.</p>
-      <div class="hero-cta reveal d3">
-        <a href="kontakt.html" class="btn btn-solid">Gutachten anfragen →</a>
-        <a href="leistungen.html" class="btn btn-line">Leistungen ansehen</a>
-      </div>
-      <div class="badges reveal d4">
-        <div class="badge"><span class="mono">01</span> Zertifizierter Sachverständiger</div>
-        <div class="badge"><span class="mono">02</span> Gerichtsfeste Gutachten</div>
-        <div class="badge"><span class="mono">03</span> Regional vor Ort im Odenwald</div>
-      </div>
-    </div>
-    <div class="report-card reveal d2">
-      <div class="report-seal">Zertifiziert<br>Baumgutachten</div>
-      <div class="rc-label">Auf einen Blick</div>
-      <div class="rc-row"><span class="rc-k">Baumkontrolle</span><span class="rc-v">Verkehrssicherheit</span></div>
-      <div class="rc-row"><span class="rc-k">Bruchsicherheit</span><span class="rc-v">Tomographie</span></div>
-      <div class="rc-row"><span class="rc-k">Standsicherheit</span><span class="rc-v">Zugversuch</span></div>
-      <div class="rc-row"><span class="rc-k">Holzwert</span><span class="rc-v">Methode Koch</span></div>
-    </div>
-  </div>
-  <div class="scroll-cue"><span class="line"></span>Scrollen</div>
-</section>
 
-<section class="pad">
-  <div class="container">
-    <div class="kicker reveal">// Leistungen</div>
-    <h2 class="title reveal d1">Was ich für Sie <em>prüfe.</em></h2>
-    <p class="section-lead reveal d2">Jede Untersuchung wird mit anerkannten Verfahren durchgeführt und so dokumentiert, dass Ergebnisse für Behörden, Gerichte und Versicherungen nachvollziehbar sind.</p>
-
-    <div class="svc-list">
-      <div class="svc-row reveal d1">
-        <div class="svc-num">01</div>
-        <div><h3>Baumkontrolle</h3></div>
-        <div><p>Regelmäßige Sichtkontrolle zur Beurteilung der Verkehrssicherheit, für Kommunen, Wohnungswirtschaft und private Grundstückseigentümer.</p><a href="leistungen.html#baumkontrolle" class="svc-link">Mehr erfahren →</a></div>
-      </div>
-      <div class="svc-row reveal d2">
-        <div class="svc-num">02</div>
-        <div><h3>Bruchsicherheit</h3></div>
-        <div><p>Eingehende Untersuchung mit Schalltomographie und Bohrwiderstandsmessung zur Beurteilung der inneren Holzsubstanz.</p><a href="leistungen.html#bruchsicherheit" class="svc-link">Mehr erfahren →</a></div>
-      </div>
-      <div class="svc-row reveal d3">
-        <div class="svc-num">03</div>
-        <div><h3>Standsicherheit</h3></div>
-        <div><p>Zugversuche zur Beurteilung der Verankerung im Wurzelraum, besonders relevant nach Sturmereignissen oder Bauarbeiten in Wurzelnähe.</p><a href="leistungen.html#standsicherheit" class="svc-link">Mehr erfahren →</a></div>
-      </div>
-      <div class="svc-row reveal d4">
-        <div class="svc-num">04</div>
-        <div><h3>Holzwertermittlung</h3></div>
-        <div><p>Fundierte Wertermittlung nach anerkannten Verfahren, etwa bei Schadensfällen, Versicherungsfragen oder Grundstücksbewertungen.</p><a href="leistungen.html#holzwert" class="svc-link">Mehr erfahren →</a></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="pad why">
-  <div class="container">
-    <div class="kicker reveal">// Warum ein Gutachten</div>
-    <h2 class="title reveal d1">Sicherheit, die <em>standhält.</em></h2>
-    <p class="section-lead reveal d2">Ein Baum kann in Sekunden zur Gefahr werden, und ein unklares Risiko schnell zur Haftungsfrage. Ein fachlich fundiertes Gutachten schafft Klarheit, bevor etwas passiert.</p>
-    <div class="why-list">
-      <div class="why-item reveal d1">
-        <div class="why-num">01</div>
-        <h4>Rechtssicherheit</h4>
-        <p>Als Grundstückseigentümer sind Sie zur Verkehrssicherung verpflichtet. Ein dokumentiertes Gutachten schützt Sie im Schadensfall.</p>
-      </div>
-      <div class="why-item reveal d2">
-        <div class="why-num">02</div>
-        <h4>Objektive Einschätzung</h4>
-        <p>Statt Vermutungen liefert eine fachgerechte Untersuchung belastbare, nachvollziehbare Ergebnisse mit anerkannten Messverfahren.</p>
-      </div>
-      <div class="why-item reveal d3">
-        <div class="why-num">03</div>
-        <h4>Frühzeitig statt zu spät</h4>
-        <p>Viele Risiken lassen sich rechtzeitig erkennen und mit gezielten Maßnahmen statt einer vollständigen Fällung beheben.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="pad">
-  <div class="container">
-    <div class="kicker reveal">// Ablauf</div>
-    <h2 class="title reveal d1">So geht es <em>weiter.</em></h2>
-    <div class="process-list">
-      <div class="p-step reveal d1">
-        <div class="p-num">01</div>
-        <div><h4>Anfrage &amp; Terminabstimmung</h4><p>Sie schildern kurz Ihr Anliegen, per Telefon, E-Mail oder Kontaktformular. Ich melde mich zeitnah mit einem Vorschlag für einen Vor-Ort-Termin.</p></div>
-      </div>
-      <div class="p-step reveal d2">
-        <div class="p-num">02</div>
-        <div><h4>Untersuchung vor Ort</h4><p>Je nach Fragestellung kommen visuelle Kontrolle, Schalltomographie, Bohrwiderstandsmessung oder Zugversuch zum Einsatz.</p></div>
-      </div>
-      <div class="p-step reveal d3">
-        <div class="p-num">03</div>
-        <div><h4>Schriftliches Gutachten</h4><p>Sie erhalten einen verständlichen, nachvollziehbaren Bericht mit Einschätzung, Fotodokumentation und ggf. Handlungsempfehlung.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="pad" style="padding-top:0;">
-  <div class="container">
-    <div class="kicker reveal">// Einsatzgebiet</div>
-    <h2 class="title reveal d1">Vor Ort im <em>Odenwald</em> &amp; Umgebung.</h2>
-    <p class="section-lead reveal d2">Der Großteil meiner Aufträge liegt im Odenwald und angrenzenden Rhein-Main-Gebiet, größere Entfernungen sind nach Absprache ebenfalls möglich.</p>
-    <div class="area-list reveal d3">
-      <span class="area-item">Odenwaldkreis</span>
-      <span class="area-item">Höchst i. Odw.</span>
-      <span class="area-item">Michelstadt</span>
-      <span class="area-item">Erbach</span>
-      <span class="area-item">Bad König</span>
-      <span class="area-item">Darmstadt</span>
-      <span class="area-item">Frankfurt am Main</span>
-      <span class="area-item">Aschaffenburg</span>
-    </div>
-  </div>
-</section>
-
-<section class="pad" style="padding-top:0;">
-  <div class="container">
-    <div class="cta-strip reveal">
-      <h3>Bereit für ein <em>Gutachten?</em></h3>
-      <div style="display:flex;gap:1rem;flex-wrap:wrap;">
-        <a href="kontakt.html" class="btn btn-solid" style="background:var(--gold);color:var(--forest);">Jetzt anfragen →</a>
-        <a href="tel:+491234567890" class="btn btn-line">0123 456 7890</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="container">
-    <div class="footer-grid">
+  <div class="hero-inner">
+    <div class="container hero-grid">
       <div>
-        <a href="index.html" class="brand">Spiehl <em style="color:#C9AC6E;">Baumgutachten</em></a>
-        <p>Zertifizierte Baumgutachten und Sicherheitsprüfungen im Odenwald und Rhein-Main-Gebiet.</p>
+        <div class="eyebrow">// Baumsachverständiger · Odenwald &amp; Rhein-Main</div>
+        <h1>Bäume sicher <em>einschätzen.</em></h1>
+        <p class="lead">Fundierte Baumgutachten, Kontrollen und Sicherheitsprüfungen von zertifizierter Hand. Für Kommunen, Wohnungsunternehmen, Versicherungen und Privateigentümer.</p>
+        <div class="hero-cta">
+          <a href="kontakt.html" class="btn btn-solid">Gutachten anfragen →</a>
+          <a href="leistungen.html" class="btn btn-line">Leistungen ansehen</a>
+        </div>
+        <div class="badges">
+          <div class="badge"><span class="mono">01</span> Zertifizierter Sachverständiger</div>
+          <div class="badge"><span class="mono">02</span> Gerichtsfeste Gutachten</div>
+          <div class="badge"><span class="mono">03</span> Regional vor Ort im Odenwald</div>
+        </div>
       </div>
-      <div class="footer-col">
-        <h5>NAVIGATION</h5>
-        <a href="leistungen.html">Leistungen</a>
-        <a href="ueber-mich.html">Über mich</a>
-        <a href="kontakt.html">Kontakt</a>
-      </div>
-      <div class="footer-col">
-        <h5>KONTAKT</h5>
-        <a href="tel:+491234567890">0123 456 7890</a>
-        <a href="mailto:info@baumgutachten-spiehl.de">info@baumgutachten-spiehl.de</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Spiehl Baumgutachten</span>
-      <div style="display:flex;gap:1.4rem;">
-        <a href="impressum.html">Impressum</a>
-        <a href="datenschutz.html">Datenschutz</a>
+      <div class="report-card">
+        <div class="report-seal">Zertifiziert<br>Baumgutachten</div>
+        <div class="rc-label">Auf einen Blick</div>
+        <div class="rc-row"><span class="rc-k">Baumkontrolle</span><span class="rc-v">Verkehrssicherheit</span></div>
+        <div class="rc-row"><span class="rc-k">Bruchsicherheit</span><span class="rc-v">Tomographie</span></div>
+        <div class="rc-row"><span class="rc-k">Standsicherheit</span><span class="rc-v">Zugversuch</span></div>
+        <div class="rc-row"><span class="rc-k">Holzwert</span><span class="rc-v">Methode Koch</span></div>
       </div>
     </div>
   </div>
-</footer>
 
-<script>
-document.addEventListener('scroll', function(){
-  document.getElementById('siteHeader').classList.toggle('scrolled', window.scrollY > 30);
-}, { passive: true });
-
-var revealEls = document.querySelectorAll('.reveal');
-var io = new IntersectionObserver(function(entries){
-  entries.forEach(function(e){ if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.15 });
-revealEls.forEach(function(el){ io.observe(el); });
-</script>
+  <div class="bottom-nav">
+    <a href="leistungen.html">Leistungen</a>
+    <a href="ueber-mich.html">Über mich</a>
+    <a href="kontakt.html">Kontakt</a>
+  </div>
+  <div class="legal-links">
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+  </div>
+</div>
 
 </body>
 </html>
