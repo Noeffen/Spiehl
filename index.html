@@ -130,8 +130,8 @@
   }
 
   @media(max-width: 768px) {
-    html, body { overflow: auto; height: auto; }
-    .page { height: auto; min-height: 100dvh; overflow: visible; }
+    html, body { overflow-x: hidden; overflow-y: auto; height: auto; }
+    .page { height: auto; min-height: 100dvh; overflow-x: hidden; overflow-y: visible; }
     header { position: relative; padding: 1.4rem; }
     .nav-links .link { display: none; }
     .hero-inner { padding: 2.4rem 1.4rem 6rem; height: auto; }
