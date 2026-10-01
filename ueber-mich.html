@@ -161,15 +161,14 @@
   .approach .kicker::before { background: var(--gold-pale); }
   .approach h2 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 2.1rem; margin-bottom: 2.6rem; letter-spacing: -.01em; max-width: 620px; }
   .approach h2 em { font-style: italic; color: var(--gold-pale); }
-  .approach-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--line-dark); }
-  .approach-item { padding: 1.9rem 1.8rem 1.9rem 0; border-right: 1px solid var(--line-dark); }
-  .approach-list .approach-item:last-child { border-right: none; padding-right: 0; }
+  .approach-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.8rem; }
+  .approach-item { padding-top: 1.8rem; border-top: 1px solid var(--line-dark); }
   .approach-item p { font-size: .87rem; line-height: 1.75; color: rgba(241,236,220,.6); }
   .approach-item h4 { font-size: .98rem; font-weight: 600; margin-bottom: .7rem; color: var(--paper); }
 
-  .cta-strip { background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 3.4rem 0; margin: 5rem 0; }
+  .cta-strip { padding: 4.4rem 0 5.2rem; border-top: 1px solid var(--line); }
   .cta-strip-inner { display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap; }
-  .cta-strip h3 { font-family: 'Fraunces', serif; font-size: 1.6rem; font-weight: 500; color: var(--forest); max-width: 420px; }
+  .cta-strip h3 { font-family: 'Fraunces', serif; font-size: 1.8rem; font-weight: 500; color: var(--forest); max-width: 420px; }
   .cta-strip h3 em { font-style: italic; color: var(--gold); }
 
   footer { background: var(--forest); color: rgba(241,236,220,.5); padding: 3.5rem 0 2rem; }
@@ -187,8 +186,7 @@
 
   @media(max-width: 900px) {
     .about-grid { grid-template-columns: 1fr; }
-    .approach-list { grid-template-columns: 1fr; }
-    .approach-item { border-right: none; border-bottom: 1px solid var(--line-dark); padding: 1.6rem 0; }
+    .approach-list { grid-template-columns: 1fr; gap: 2rem; }
     .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
     .nav-links .link { display: none; }
     .burger { display: flex; }

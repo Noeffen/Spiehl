@@ -122,6 +122,9 @@
   .cta-primary { font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: 1.08rem; color: var(--gold-pale); }
   .cta-secondary { font-family: 'Inter', sans-serif; font-weight: 600; font-size: .85rem; letter-spacing: .01em; color: rgba(241,236,220,.6); border-color: rgba(241,236,220,.32); }
   .cta-secondary:hover { color: var(--paper); border-color: var(--gold-pale); }
+  .cta-primary-dark { font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: 1.08rem; color: var(--gold); }
+  .cta-secondary-dark { font-family: 'Inter', sans-serif; font-weight: 600; font-size: .85rem; letter-spacing: .01em; color: var(--muted); border-color: var(--line); }
+  .cta-secondary-dark:hover { color: var(--forest); border-color: var(--gold); }
 
   .page-hero { background: var(--forest); color: var(--paper); padding: 11rem 0 5rem; }
   .kicker { display: inline-flex; align-items: center; gap: .7rem; font-family: 'Space Mono', monospace; font-size: .68rem; letter-spacing: .08em; color: var(--gold-pale); margin-bottom: 1.3rem; }
@@ -132,6 +135,7 @@
 
   .svc-detail { padding: 5.5rem 0; border-bottom: 1px solid var(--line); }
   .svc-detail-grid { display: grid; grid-template-columns: 70px 1fr 1fr; gap: 3rem; align-items: start; }
+  .svc-detail-grid > .svc-photo { grid-column: 2 / 4; }
   .svc-num { font-family: 'Space Mono', monospace; font-size: 1rem; color: var(--gold); padding-top: .4rem; }
   .svc-detail h2 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.9rem; color: var(--forest); margin-bottom: 1rem; letter-spacing: -.01em; }
   .svc-detail .lead-txt { font-size: 1rem; line-height: 1.85; color: var(--muted); margin-bottom: 1.2rem; }
@@ -140,7 +144,7 @@
   .svc-tags { font-size: .8rem; color: var(--muted); }
   .svc-tags span { color: var(--forest); font-weight: 600; }
   .svc-tags .sep { color: var(--gold); margin: 0 .6rem; }
-  .svc-photo { width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; margin-top: 1.6rem; border: 1px solid var(--line); }
+  .svc-photo { width: 100%; height: auto; aspect-ratio: 2/1; object-fit: cover; margin-top: 2.6rem; border: 1px solid var(--line); }
 
   .why { background: var(--forest); color: var(--paper); padding: 5.5rem 0; }
   .why .kicker { color: var(--gold-pale); }
@@ -148,17 +152,16 @@
   .why h2 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(1.8rem, 3vw, 2.4rem); letter-spacing: -.02em; margin-bottom: 1.1rem; max-width: 620px; }
   .why h2 em { font-style: italic; color: var(--gold-pale); }
   .why > .container > p { font-size: .96rem; line-height: 1.8; color: rgba(241,236,220,.6); max-width: 600px; }
-  .why-list { margin-top: 2.6rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--line-dark); }
-  .why-item { padding: 1.9rem 1.8rem 1.9rem 0; border-right: 1px solid var(--line-dark); }
-  .why-list .why-item:last-child { border-right: none; padding-right: 0; }
+  .why-list { margin-top: 3rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.8rem; }
+  .why-item { padding-top: 1.8rem; border-top: 1px solid var(--line-dark); }
   .why-num { font-family: 'Fraunces', serif; font-style: italic; font-size: 1.6rem; color: var(--gold-pale); opacity: .75; margin-bottom: .8rem; }
   .why-item h4 { font-size: .96rem; font-weight: 600; margin-bottom: .6rem; }
   .why-item p { font-size: .85rem; line-height: 1.7; color: rgba(241,236,220,.55); }
 
-  .cta-strip { background: var(--forest); color: var(--paper); padding: 3.4rem 0; margin: 5rem 0; }
+  .cta-strip { padding: 4.4rem 0 5.2rem; border-top: 1px solid var(--line); }
   .cta-strip-inner { display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap; }
-  .cta-strip h3 { font-family: 'Fraunces', serif; font-size: 1.7rem; font-weight: 500; max-width: 420px; }
-  .cta-strip h3 em { font-style: italic; color: var(--gold-pale); }
+  .cta-strip h3 { font-family: 'Fraunces', serif; font-size: 1.8rem; font-weight: 500; color: var(--forest); max-width: 420px; }
+  .cta-strip h3 em { font-style: italic; color: var(--gold); }
 
   footer { background: var(--forest); color: rgba(241,236,220,.5); padding: 3.5rem 0 2rem; }
   .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--line-dark); }
@@ -175,8 +178,9 @@
 
   @media(max-width: 900px) {
     .svc-detail-grid { grid-template-columns: 1fr; gap: 1.2rem; }
-    .why-list { grid-template-columns: 1fr; }
-    .why-item { border-right: none; border-bottom: 1px solid var(--line-dark); padding: 1.6rem 0; }
+    .svc-detail-grid > .svc-photo { grid-column: 1; }
+    .svc-photo { aspect-ratio: 4/3; }
+    .why-list { grid-template-columns: 1fr; gap: 2rem; }
     .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
     .nav-links .link { display: none; }
     .burger { display: flex; }
@@ -263,7 +267,6 @@
       <h2>Baumkontrolle</h2>
       <p class="lead-txt">Die regelmäßige Baumkontrolle dient der Beurteilung der Verkehrssicherheit, also der Frage, ob von einem Baum eine erkennbare Gefahr für Personen oder Sachwerte ausgeht.</p>
       <p class="lead-txt">Als Grundstückseigentümer sind Sie zur regelmäßigen Kontrolle Ihrer Bäume verpflichtet. Eine dokumentierte Sichtkontrolle nach anerkannten Methoden schützt Sie im Schadensfall und hilft, Risiken frühzeitig zu erkennen.</p>
-      <img src="img/kontrolle.jpg" alt="Sichtkontrolle der Baumkrone vor Ort" class="svc-photo" style="object-position: 50% 78%;" width="829" height="1100" loading="lazy" decoding="async">
     </div>
     <div class="reveal d2 svc-meta">
       <span class="svc-meta-label">FÜR WEN GEEIGNET</span>
@@ -272,6 +275,7 @@
       <p>Regelmäßige Kontrollpflicht, Auffälligkeiten nach Sturm, Verdacht auf Schädlingsbefall oder Fäule, Vorbereitung von Bauvorhaben in Baumnähe.</p>
       <div class="svc-tags"><span>Sichtkontrolle</span><span class="sep">/</span><span>Verkehrssicherheit</span><span class="sep">/</span><span>Dokumentation</span></div>
     </div>
+    <img src="img/kontrolle.jpg" alt="Sichtkontrolle der Baumkrone vor Ort" class="svc-photo reveal d3" style="object-position: 50% 72%;" width="829" height="1100" loading="lazy" decoding="async">
   </div>
 </section>
 
@@ -300,7 +304,6 @@
       <h2>Standsicherheit</h2>
       <p class="lead-txt">Mit dem Zugversuch wird die Verankerung eines Baumes im Wurzelraum untersucht, ein bewährtes Verfahren, um die Standsicherheit auch bei intaktem Stamm objektiv zu beurteilen.</p>
       <p class="lead-txt">Besonders relevant, wenn Bauarbeiten im Wurzelbereich stattgefunden haben, der Baum sichtbar geneigt steht oder nach Sturmereignissen Zweifel an der Verankerung bestehen.</p>
-      <img src="img/messung.jpg" alt="Zugversuch am Stamm mit Messtechnik zur Beurteilung der Standsicherheit" class="svc-photo" width="1300" height="867" loading="lazy" decoding="async">
     </div>
     <div class="reveal d2 svc-meta">
       <span class="svc-meta-label">FÜR WEN GEEIGNET</span>
@@ -309,6 +312,7 @@
       <p>Sichtbare Schiefstellung, Wurzelschäden durch Erdarbeiten, Freistellung nach Fällungen in der Umgebung, Sturmschäden in der Nachbarschaft.</p>
       <div class="svc-tags"><span>Zugversuch</span><span class="sep">/</span><span>Wurzelraum</span><span class="sep">/</span><span>Objektive Messung</span></div>
     </div>
+    <img src="img/messung.jpg" alt="Zugversuch am Stamm mit Messtechnik zur Beurteilung der Standsicherheit" class="svc-photo reveal d3" width="1300" height="867" loading="lazy" decoding="async">
   </div>
 </section>
 
@@ -334,8 +338,8 @@
   <div class="container cta-strip-inner">
     <h3>Nicht sicher, welches <em>Verfahren passt?</em></h3>
     <div style="display:flex;align-items:baseline;gap:.5rem 2.2rem;flex-wrap:wrap;">
-      <a href="kontakt.html" class="cta-link cta-primary">Unverbindlich anfragen <span class="arrow">→</span></a>
-      <a href="tel:+4916094656852" class="cta-link cta-secondary">+49 160 94656852</a>
+      <a href="kontakt.html" class="cta-link cta-primary-dark">Unverbindlich anfragen <span class="arrow">→</span></a>
+      <a href="tel:+4916094656852" class="cta-link cta-secondary-dark">+49 160 94656852</a>
     </div>
   </div>
 </section>
