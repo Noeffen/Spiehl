@@ -151,7 +151,7 @@
 
   .svc-detail { padding: 5.5rem 0; border-bottom: 1px solid var(--line); }
   .svc-detail-grid { display: grid; grid-template-columns: 70px 1fr 1fr; gap: 3rem; align-items: start; }
-  .svc-detail-grid > .svc-photo { grid-column: 2 / 4; }
+  .svc-detail-grid > .svc-photo-wrap { grid-column: 2 / 4; }
   .svc-num { font-family: 'Space Mono', monospace; font-size: 1rem; color: var(--gold); padding-top: .4rem; }
   .svc-detail h2 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.9rem; color: var(--forest); margin-bottom: 1rem; letter-spacing: -.01em; }
   .svc-detail .lead-txt { font-size: 1rem; line-height: 1.85; color: var(--muted); margin-bottom: 1.2rem; }
@@ -160,7 +160,9 @@
   .svc-tags { font-size: .8rem; color: var(--muted); }
   .svc-tags span { color: var(--forest); font-weight: 600; }
   .svc-tags .sep { color: var(--gold); margin: 0 .6rem; }
-  .svc-photo { width: 100%; height: auto; aspect-ratio: 2/1; object-fit: cover; margin-top: 2.6rem; border: 1px solid var(--line); }
+  .svc-photo-wrap { margin-top: 2.6rem; aspect-ratio: 2/1; overflow: hidden; border: 1px solid var(--line); }
+  .svc-photo { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .7s cubic-bezier(.16,1,.3,1); }
+  .svc-photo-wrap:hover .svc-photo { transform: scale(1.06); }
 
   .why-list-v { display: flex; flex-direction: column; gap: 1.7rem; }
   .why-item-v { display: grid; grid-template-columns: 36px 1fr; gap: 1rem; padding-top: 1.4rem; border-top: 1px solid var(--line-dark); }
@@ -188,8 +190,8 @@
 
   @media(max-width: 900px) {
     .svc-detail-grid { grid-template-columns: 1fr; gap: 1.2rem; }
-    .svc-detail-grid > .svc-photo { grid-column: 1; }
-    .svc-photo { aspect-ratio: 4/3; }
+    .svc-detail-grid > .svc-photo-wrap { grid-column: 1; }
+    .svc-photo-wrap { aspect-ratio: 4/3; }
     .intro-grid { grid-template-columns: 1fr; gap: 3rem; }
     .intro-divider { display: none; }
     .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
@@ -282,7 +284,7 @@
       <p>Regelmäßige Kontrollpflicht, Auffälligkeiten nach Sturm, Verdacht auf Schädlingsbefall oder Fäule, Vorbereitung von Bauvorhaben in Baumnähe.</p>
       <div class="svc-tags"><span>Sichtkontrolle</span><span class="sep">/</span><span>Verkehrssicherheit</span><span class="sep">/</span><span>Dokumentation</span></div>
     </div>
-    <img src="img/kontrolle.jpg" alt="Sichtkontrolle der Baumkrone vor Ort" class="svc-photo reveal d3" style="object-position: 50% 72%;" width="1100" height="1460" loading="lazy" decoding="async">
+    <div class="svc-photo-wrap reveal d3"><img src="img/kontrolle.jpg" alt="Sichtkontrolle der Baumkrone vor Ort" class="svc-photo" style="object-position: 50% 72%;" width="1100" height="1460" loading="lazy" decoding="async"></div>
   </div>
 </section>
 
@@ -301,7 +303,7 @@
       <p>Sichtbare Fäulnisanzeichen, Pilzfruchtkörper, Rindenschäden, Verdacht auf Hohlräume nach äußerlicher Kontrolle.</p>
       <div class="svc-tags"><span>Schalltomographie</span><span class="sep">/</span><span>Bohrwiderstand</span><span class="sep">/</span><span>Zerstörungsarm</span></div>
     </div>
-    <img src="img/kletterarbeit.jpg" alt="Seilklettertechnik zur Untersuchung der Krone in luftiger Höhe" class="svc-photo reveal d3" style="object-position: 90% 55%;" width="1700" height="526" loading="lazy" decoding="async">
+    <div class="svc-photo-wrap reveal d3"><img src="img/kletterarbeit.jpg" alt="Seilklettertechnik zur Untersuchung der Krone in luftiger Höhe" class="svc-photo" style="object-position: 90% 55%;" width="1700" height="526" loading="lazy" decoding="async"></div>
   </div>
 </section>
 
@@ -320,7 +322,7 @@
       <p>Sichtbare Schiefstellung, Wurzelschäden durch Erdarbeiten, Freistellung nach Fällungen in der Umgebung, Sturmschäden in der Nachbarschaft.</p>
       <div class="svc-tags"><span>Zugversuch</span><span class="sep">/</span><span>Wurzelraum</span><span class="sep">/</span><span>Objektive Messung</span></div>
     </div>
-    <img src="img/messung.jpg" alt="Zugversuch am Stamm mit Messtechnik zur Beurteilung der Standsicherheit" class="svc-photo reveal d3" width="1500" height="1000" loading="lazy" decoding="async">
+    <div class="svc-photo-wrap reveal d3"><img src="img/messung.jpg" alt="Zugversuch am Stamm mit Messtechnik zur Beurteilung der Standsicherheit" class="svc-photo" width="1500" height="1000" loading="lazy" decoding="async"></div>
   </div>
 </section>
 
@@ -339,7 +341,7 @@
       <p>Schäden durch Dritte, Streitfälle mit Nachbarn, Wertermittlung im Rahmen von Grundstücksgeschäften.</p>
       <div class="svc-tags"><span>Wertermittlung</span><span class="sep">/</span><span>Versicherungsfälle</span><span class="sep">/</span><span>Nachvollziehbar</span></div>
     </div>
-    <img src="img/untersuchung.jpg" alt="Eingehende Untersuchung des Baumbestands vor Ort" class="svc-photo reveal d3" style="object-position: 50% 35%;" width="1500" height="1000" loading="lazy" decoding="async">
+    <div class="svc-photo-wrap reveal d3"><img src="img/untersuchung.jpg" alt="Eingehende Untersuchung des Baumbestands vor Ort" class="svc-photo" style="object-position: 50% 35%;" width="1500" height="1000" loading="lazy" decoding="async"></div>
   </div>
 </section>
 
