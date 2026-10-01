@@ -72,6 +72,14 @@
   .skip-link { position: absolute; left: -9999px; top: 0; z-index: 9999; background: var(--forest); color: var(--paper); padding: .8rem 1.4rem; font-size: .85rem; font-weight: 600; }
   .skip-link:focus { left: 1rem; top: 1rem; }
   a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+  .section-nav { position: fixed; right: 2.2rem; top: 50%; transform: translateY(-50%); z-index: 400; display: flex; flex-direction: column; align-items: flex-end; gap: 1.5rem; }
+  .section-nav a { display: flex; align-items: center; gap: .6rem; }
+  .section-nav .sn-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); opacity: .32; transition: opacity .25s ease, transform .25s ease; flex-shrink: 0; }
+  .section-nav a:hover .sn-dot, .section-nav a.active .sn-dot { opacity: 1; transform: scale(1.7); }
+  .section-nav .sn-label { font-family: 'Space Mono', monospace; font-size: .64rem; letter-spacing: .05em; color: var(--paper); background: var(--forest); padding: .4rem .65rem; border-radius: 2px; opacity: 0; transform: translateX(6px); transition: opacity .25s ease, transform .25s ease; white-space: nowrap; pointer-events: none; }
+  .section-nav a:hover .sn-label, .section-nav a.active .sn-label { opacity: 1; transform: translateX(0); }
+  @media(max-width: 1180px) { .section-nav { display: none; } }
   .container { max-width: 1440px; margin: 0 auto; padding: 0 clamp(1.4rem, 4vw, 4rem); }
 
   header { position: fixed; top: 0; left: 0; right: 0; z-index: 600; padding: 1.6rem clamp(1.4rem, 4vw, 2.5rem); transition: background .3s, padding .3s, box-shadow .3s; }
@@ -126,7 +134,7 @@
   .cta-secondary-dark { font-family: 'Inter', sans-serif; font-weight: 600; font-size: .85rem; letter-spacing: .01em; color: var(--muted); border-color: var(--line); }
   .cta-secondary-dark:hover { color: var(--forest); border-color: var(--gold); }
 
-  .page-hero { background: var(--forest); color: var(--paper); padding: 11rem 0 5rem; }
+  .page-hero { background: linear-gradient(180deg, var(--forest) 0%, #0d1811 100%); color: var(--paper); padding: 11rem 0 5.5rem; }
   .kicker { display: inline-flex; align-items: center; gap: .7rem; font-family: 'Space Mono', monospace; font-size: .68rem; letter-spacing: .08em; color: var(--gold-pale); margin-bottom: 1.3rem; }
   .kicker::before { content: ''; width: 22px; height: 1px; background: var(--gold-pale); }
   .page-hero h1 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(2.3rem, 4vw, 3.4rem); letter-spacing: -.02em; margin-bottom: 1.2rem; }
@@ -146,7 +154,7 @@
   .svc-tags .sep { color: var(--gold); margin: 0 .6rem; }
   .svc-photo { width: 100%; height: auto; aspect-ratio: 2/1; object-fit: cover; margin-top: 2.6rem; border: 1px solid var(--line); }
 
-  .why { background: var(--forest); color: var(--paper); padding: 5.5rem 0; }
+  .why { background: linear-gradient(180deg, #0d1811 0%, var(--forest) 14%); color: var(--paper); padding: 5.5rem 0; border-top: 1px solid rgba(201,172,110,.18); position: relative; }
   .why .kicker { color: var(--gold-pale); }
   .why .kicker::before { background: var(--gold-pale); }
   .why h2 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(1.8rem, 3vw, 2.4rem); letter-spacing: -.02em; margin-bottom: 1.1rem; max-width: 620px; }
@@ -199,6 +207,13 @@
 <body>
 
 <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+
+<nav class="section-nav" aria-label="Leistungsabschnitte">
+  <a href="#baumkontrolle"><span class="sn-label">Baumkontrolle</span><span class="sn-dot"></span></a>
+  <a href="#bruchsicherheit"><span class="sn-label">Bruchsicherheit</span><span class="sn-dot"></span></a>
+  <a href="#standsicherheit"><span class="sn-label">Standsicherheit</span><span class="sn-dot"></span></a>
+  <a href="#holzwert"><span class="sn-label">Holzwertermittlung</span><span class="sn-dot"></span></a>
+</nav>
 
 <header id="siteHeader">
   <div class="nav-inner">
@@ -294,6 +309,7 @@
       <p>Sichtbare Fäulnisanzeichen, Pilzfruchtkörper, Rindenschäden, Verdacht auf Hohlräume nach äußerlicher Kontrolle.</p>
       <div class="svc-tags"><span>Schalltomographie</span><span class="sep">/</span><span>Bohrwiderstand</span><span class="sep">/</span><span>Zerstörungsarm</span></div>
     </div>
+    <img src="img/kletterarbeit.jpg" alt="Seilklettertechnik zur Untersuchung der Krone in luftiger Höhe" class="svc-photo reveal d3" style="object-position: 90% 55%;" width="1700" height="526" loading="lazy" decoding="async">
   </div>
 </section>
 
@@ -331,6 +347,7 @@
       <p>Schäden durch Dritte, Streitfälle mit Nachbarn, Wertermittlung im Rahmen von Grundstücksgeschäften.</p>
       <div class="svc-tags"><span>Wertermittlung</span><span class="sep">/</span><span>Versicherungsfälle</span><span class="sep">/</span><span>Nachvollziehbar</span></div>
     </div>
+    <img src="img/untersuchung.jpg" alt="Eingehende Untersuchung des Baumbestands vor Ort" class="svc-photo reveal d3" style="object-position: 50% 35%;" width="1300" height="867" loading="lazy" decoding="async">
   </div>
 </section>
 
@@ -381,6 +398,20 @@ var io = new IntersectionObserver(function(entries){
   entries.forEach(function(e){ if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.15 });
 document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+var sectionNavLinks = document.querySelectorAll('.section-nav a');
+var sectionNavTargets = ['baumkontrolle','bruchsicherheit','standsicherheit','holzwert']
+  .map(function(id){ return document.getElementById(id); })
+  .filter(Boolean);
+var sectionNavObserver = new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+    if (entry.isIntersecting) {
+      var id = entry.target.id;
+      sectionNavLinks.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href') === '#' + id); });
+    }
+  });
+}, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+sectionNavTargets.forEach(function(s){ sectionNavObserver.observe(s); });
 
 var burgerBtn = document.getElementById('burgerBtn');
 var mobileMenu = document.getElementById('mobileMenu');
