@@ -73,12 +73,12 @@
   .skip-link:focus { left: 1rem; top: 1rem; }
   a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 
-  .section-nav { position: fixed; right: 2.2rem; top: 50%; transform: translateY(-50%); z-index: 400; display: flex; flex-direction: column; align-items: flex-end; gap: 1.5rem; }
-  .section-nav a { display: flex; align-items: center; gap: .6rem; --proximity: 0; }
-  .section-nav .sn-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); opacity: calc(.26 + var(--proximity) * .74); transform: scale(calc(1 + var(--proximity) * .8)); transition: opacity .5s ease, transform .5s ease; flex-shrink: 0; }
-  .section-nav a:hover .sn-dot { opacity: 1; transform: scale(1.8); }
-  .section-nav .sn-label { font-family: 'Space Mono', monospace; font-size: .64rem; letter-spacing: .05em; color: var(--paper); background: var(--forest); padding: .4rem .65rem; border-radius: 2px; opacity: var(--proximity); transform: translateX(calc(8px - 8px * var(--proximity))); transition: opacity .5s ease, transform .5s ease; white-space: nowrap; pointer-events: none; }
-  .section-nav a:hover .sn-label { opacity: 1; transform: translateX(0); }
+  .section-nav { position: fixed; right: 2.4rem; top: 50%; transform: translateY(-50%); z-index: 400; display: flex; flex-direction: column; align-items: flex-end; gap: 1.6rem; pointer-events: none; }
+  .section-nav a { position: relative; display: block; width: 14px; height: 14px; --proximity: 0; pointer-events: auto; }
+  .section-nav .sn-dot { position: absolute; top: 50%; right: 0; transform: translateY(-50%) scale(calc(1 + var(--proximity) * .8)); width: 6px; height: 6px; border-radius: 50%; background: var(--gold); opacity: calc(.26 + var(--proximity) * .74); transition: opacity .5s ease, transform .5s ease; }
+  .section-nav a:hover .sn-dot { opacity: 1; transform: translateY(-50%) scale(1.8); }
+  .section-nav .sn-label { position: absolute; right: 18px; top: 50%; font-family: 'Space Mono', monospace; font-size: .64rem; letter-spacing: .05em; color: var(--paper); background: var(--forest); padding: .4rem .65rem; border-radius: 2px; opacity: var(--proximity); transform: translateY(-50%) translateX(calc(8px - 8px * var(--proximity))); transition: opacity .5s ease, transform .5s ease; white-space: nowrap; pointer-events: none; }
+  .section-nav a:hover .sn-label { opacity: 1; transform: translateY(-50%) translateX(0); }
   @media(max-width: 1180px) { .section-nav { display: none; } }
   .container { max-width: 1440px; margin: 0 auto; padding: 0 clamp(1.4rem, 4vw, 4rem); }
 
@@ -137,8 +137,11 @@
   .kicker { display: inline-flex; align-items: center; gap: .7rem; font-family: 'Space Mono', monospace; font-size: .68rem; letter-spacing: .08em; color: var(--gold-pale); margin-bottom: 1.3rem; }
   .kicker::before { content: ''; width: 22px; height: 1px; background: var(--gold-pale); }
 
-  .intro-split { background: linear-gradient(180deg, var(--forest) 0%, #0d1811 100%); color: var(--paper); padding: 10.5rem 0 5.5rem; }
-  .intro-grid { display: grid; grid-template-columns: 1fr 1px 1fr; gap: 4.4rem; align-items: start; }
+  .intro-split { position: relative; overflow: hidden; background: var(--forest); color: var(--paper); padding: 10.5rem 0 5.5rem; }
+  .intro-bg { position: absolute; inset: 0; z-index: 0; }
+  .intro-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 68% 22%; }
+  .intro-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(120deg, rgba(18,32,26,.94) 0%, rgba(18,32,26,.88) 50%, rgba(18,32,26,.94) 100%); }
+  .intro-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1px 1fr; gap: 4.4rem; align-items: start; }
   .intro-divider { align-self: stretch; background: linear-gradient(180deg, transparent 0%, rgba(201,172,110,.3) 18%, rgba(201,172,110,.3) 82%, transparent 100%); }
   .intro-split h1 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(1.9rem, 2.5vw, 2.7rem); line-height: 1.15; letter-spacing: -.02em; margin-bottom: 1.1rem; }
   .intro-split h2 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(1.7rem, 2.2vw, 2.3rem); line-height: 1.15; letter-spacing: -.02em; margin-bottom: 1.1rem; }
@@ -243,6 +246,7 @@
 </div>
 
 <section class="intro-split" id="main-content">
+  <div class="intro-bg"><img src="img/klettern.jpg" alt="" width="933" height="1400" decoding="async"></div>
   <div class="container intro-grid">
     <div class="intro-left reveal">
       <div class="kicker">// Leistungen</div>
