@@ -119,9 +119,8 @@
   .hero-inner h1 em { color: var(--gold-pale); font-weight: 400; }
   .hero-inner .lead { font-size: 1.05rem; line-height: 1.8; color: rgba(241,236,220,.62); max-width: 480px; margin-bottom: 2.2rem; font-weight: 300; }
   .hero-cta { display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem 2.2rem; margin-bottom: 2.6rem; }
-  .badges { display: flex; flex-wrap: wrap; gap: .8rem 2.2rem; border-top: 1px solid var(--line-dark); padding-top: 1.4rem; max-width: 560px; }
-  .badge { display: flex; align-items: baseline; gap: .7rem; font-size: .8rem; color: rgba(241,236,220,.55); }
-  .badge .mono { color: var(--gold-pale); font-size: .7rem; font-family: 'Space Mono', monospace; }
+  .credential-line { font-family: 'Space Mono', monospace; font-size: .78rem; letter-spacing: .02em; line-height: 1.8; color: rgba(241,236,220,.55); border-top: 1px solid var(--line-dark); padding-top: 1.3rem; max-width: 560px; }
+  .credential-line strong { color: var(--paper); font-weight: 600; }
 
   /* ── BOTTOM NAV ── */
   .bottom-nav { position: absolute; bottom: 2.4rem; left: 2.5rem; z-index: 20; display: flex; gap: 2rem; }
@@ -149,7 +148,7 @@
     .hero-photo::after { background: linear-gradient(180deg, rgba(18,32,26,.6) 0%, rgba(18,32,26,.78) 60%, var(--forest) 100%); }
     .diagram { display: none; }
     .hero-inner { padding: 34vh 1.4rem 6rem; height: auto; }
-    .badges { flex-direction: column; align-items: flex-start; gap: .7rem; max-width: 100%; }
+    .credential-line { max-width: 100%; }
     .bottom-nav { position: relative; left: auto; bottom: auto; margin: 2rem 1.4rem 1rem; flex-wrap: wrap; gap: 1.4rem 1.8rem; }
     .legal-links { position: relative; right: auto; bottom: auto; margin: 0 1.4rem 2rem; }
   }
@@ -198,17 +197,13 @@
   <div class="hero-inner" id="main-content">
     <div class="hero-content">
       <div class="eyebrow">// Baumsachverständiger · Odenwald &amp; Rhein-Main</div>
-      <h1>Bäume sicher <em>einschätzen.</em><span class="sr-only"> Baumsachverständiger Lukas Spiehl im Odenwald und Rhein-Main-Gebiet.</span></h1>
-      <p class="lead">Fundierte Baumgutachten, Kontrollen und Sicherheitsprüfungen von zertifizierter Hand. Für Kommunen, Wohnungsunternehmen, Versicherungen und Privateigentümer.</p>
+      <h1>Baumgutachten <em>und Baumkontrolle.</em><span class="sr-only"> Baumsachverständiger Lukas Spiehl im Odenwald und Rhein-Main-Gebiet.</span></h1>
+      <p class="lead">Fachliche Beurteilung von Bäumen, Schäden und Verkehrssicherheit, nachvollziehbar dokumentiert und persönlich vor Ort. Für Kommunen, Wohnungsunternehmen, Versicherungen und Privateigentümer.</p>
       <div class="hero-cta">
         <a href="kontakt.html" class="cta-link cta-primary">Gutachten anfragen <span class="arrow">→</span></a>
         <a href="leistungen.html" class="cta-link cta-secondary">Leistungen ansehen</a>
       </div>
-      <div class="badges">
-        <div class="badge"><span class="mono">01</span> Zertifizierter Sachverständiger</div>
-        <div class="badge"><span class="mono">02</span> Gerichtsfeste Gutachten</div>
-        <div class="badge"><span class="mono">03</span> Regional vor Ort im Odenwald</div>
-      </div>
+      <div class="credential-line"><strong>Lukas Spiehl</strong> · M.Sc. Urban Tree and Forest Management · FLL-zertifizierter Baumkontrolleur</div>
     </div>
   </div>
 
