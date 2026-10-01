@@ -83,7 +83,7 @@
   .container { max-width: 1440px; margin: 0 auto; padding: 0 clamp(1.4rem, 4vw, 4rem); }
 
   header { position: fixed; top: 0; left: 0; right: 0; z-index: 600; padding: 1.6rem clamp(1.4rem, 4vw, 2.5rem); transition: background .3s, padding .3s, box-shadow .3s; }
-  header.scrolled { background: rgba(241,236,220,0.92); backdrop-filter: blur(14px); padding: 1.1rem clamp(1.4rem, 4vw, 2.5rem); box-shadow: 0 1px 0 var(--line); }
+  header.scrolled { background: rgba(241,236,220,0.98); padding: 1.1rem clamp(1.4rem, 4vw, 2.5rem); box-shadow: 0 1px 0 var(--line); }
   .nav-inner { display: flex; justify-content: space-between; align-items: center; }
   .brand { display: inline-flex; align-items: center; gap: .6rem; font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.2rem; letter-spacing: -.01em; color: var(--paper); transition: color .3s; }
   .brand img { height: 1.7em; width: auto; display: block; }
@@ -393,20 +393,27 @@ document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
 
 var sectionNavEntries = ['baumkontrolle','bruchsicherheit','standsicherheit','holzwert']
   .map(function(id){
-    return { el: document.getElementById(id), link: document.querySelector('.section-nav a[href="#' + id + '"]') };
+    return { el: document.getElementById(id), link: document.querySelector('.section-nav a[href="#' + id + '"]'), top: 0, height: 0 };
   })
   .filter(function(e){ return e.el && e.link; });
+
+function measureSectionNav(){
+  sectionNavEntries.forEach(function(e){
+    var rect = e.el.getBoundingClientRect();
+    e.top = rect.top + window.scrollY;
+    e.height = rect.height;
+  });
+}
 
 var sectionNavTicking = false;
 function updateSectionNav(){
   sectionNavTicking = false;
   var vh = window.innerHeight;
-  var center = vh / 2;
+  var viewportCenter = window.scrollY + vh / 2;
   var range = vh * 0.6;
   sectionNavEntries.forEach(function(e){
-    var rect = e.el.getBoundingClientRect();
-    var sectionCenter = rect.top + rect.height / 2;
-    var dist = Math.abs(sectionCenter - center);
+    var sectionCenter = e.top + e.height / 2;
+    var dist = Math.abs(sectionCenter - viewportCenter);
     var proximity = Math.max(0, 1 - dist / range);
     proximity = proximity * proximity * (3 - 2 * proximity);
     e.link.style.setProperty('--proximity', proximity.toFixed(3));
@@ -419,8 +426,9 @@ function onSectionNavScroll(){
   }
 }
 if (sectionNavEntries.length) {
+  measureSectionNav();
   window.addEventListener('scroll', onSectionNavScroll, { passive: true });
-  window.addEventListener('resize', onSectionNavScroll);
+  window.addEventListener('resize', function(){ measureSectionNav(); updateSectionNav(); }, { passive: true });
   updateSectionNav();
 }
 
