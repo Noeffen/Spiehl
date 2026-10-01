@@ -74,11 +74,11 @@
   a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 
   .section-nav { position: fixed; right: 2.2rem; top: 50%; transform: translateY(-50%); z-index: 400; display: flex; flex-direction: column; align-items: flex-end; gap: 1.5rem; }
-  .section-nav a { display: flex; align-items: center; gap: .6rem; }
-  .section-nav .sn-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); opacity: .32; transition: opacity .25s ease, transform .25s ease; flex-shrink: 0; }
-  .section-nav a:hover .sn-dot, .section-nav a.active .sn-dot { opacity: 1; transform: scale(1.7); }
-  .section-nav .sn-label { font-family: 'Space Mono', monospace; font-size: .64rem; letter-spacing: .05em; color: var(--paper); background: var(--forest); padding: .4rem .65rem; border-radius: 2px; opacity: 0; transform: translateX(6px); transition: opacity .25s ease, transform .25s ease; white-space: nowrap; pointer-events: none; }
-  .section-nav a:hover .sn-label, .section-nav a.active .sn-label { opacity: 1; transform: translateX(0); }
+  .section-nav a { display: flex; align-items: center; gap: .6rem; --proximity: 0; }
+  .section-nav .sn-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); opacity: calc(.26 + var(--proximity) * .74); transform: scale(calc(1 + var(--proximity) * .8)); transition: opacity .5s ease, transform .5s ease; flex-shrink: 0; }
+  .section-nav a:hover .sn-dot { opacity: 1; transform: scale(1.8); }
+  .section-nav .sn-label { font-family: 'Space Mono', monospace; font-size: .64rem; letter-spacing: .05em; color: var(--paper); background: var(--forest); padding: .4rem .65rem; border-radius: 2px; opacity: var(--proximity); transform: translateX(calc(8px - 8px * var(--proximity))); transition: opacity .5s ease, transform .5s ease; white-space: nowrap; pointer-events: none; }
+  .section-nav a:hover .sn-label { opacity: 1; transform: translateX(0); }
   @media(max-width: 1180px) { .section-nav { display: none; } }
   .container { max-width: 1440px; margin: 0 auto; padding: 0 clamp(1.4rem, 4vw, 4rem); }
 
@@ -134,12 +134,17 @@
   .cta-secondary-dark { font-family: 'Inter', sans-serif; font-weight: 600; font-size: .85rem; letter-spacing: .01em; color: var(--muted); border-color: var(--line); }
   .cta-secondary-dark:hover { color: var(--forest); border-color: var(--gold); }
 
-  .page-hero { background: linear-gradient(180deg, var(--forest) 0%, #0d1811 100%); color: var(--paper); padding: 11rem 0 5.5rem; }
   .kicker { display: inline-flex; align-items: center; gap: .7rem; font-family: 'Space Mono', monospace; font-size: .68rem; letter-spacing: .08em; color: var(--gold-pale); margin-bottom: 1.3rem; }
   .kicker::before { content: ''; width: 22px; height: 1px; background: var(--gold-pale); }
-  .page-hero h1 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(2.3rem, 4vw, 3.4rem); letter-spacing: -.02em; margin-bottom: 1.2rem; }
-  .page-hero h1 em { font-style: italic; color: var(--gold-pale); font-weight: 400; }
-  .page-hero p { font-size: 1rem; line-height: 1.8; color: rgba(241,236,220,.62); max-width: 560px; font-weight: 300; }
+
+  .intro-split { background: linear-gradient(180deg, var(--forest) 0%, #0d1811 100%); color: var(--paper); padding: 10.5rem 0 5.5rem; }
+  .intro-grid { display: grid; grid-template-columns: 1fr 1px 1fr; gap: 4.4rem; align-items: start; }
+  .intro-divider { align-self: stretch; background: linear-gradient(180deg, transparent 0%, rgba(201,172,110,.3) 18%, rgba(201,172,110,.3) 82%, transparent 100%); }
+  .intro-split h1 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(1.9rem, 2.5vw, 2.7rem); line-height: 1.15; letter-spacing: -.02em; margin-bottom: 1.1rem; }
+  .intro-split h2 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(1.7rem, 2.2vw, 2.3rem); line-height: 1.15; letter-spacing: -.02em; margin-bottom: 1.1rem; }
+  .intro-split h1 em, .intro-split h2 em { font-style: italic; color: var(--gold-pale); font-weight: 400; }
+  .intro-split .lead-sm { font-size: .96rem; line-height: 1.8; color: rgba(241,236,220,.62); font-weight: 300; }
+  .intro-right .lead-sm { margin-bottom: 2.2rem; }
 
   .svc-detail { padding: 5.5rem 0; border-bottom: 1px solid var(--line); }
   .svc-detail-grid { display: grid; grid-template-columns: 70px 1fr 1fr; gap: 3rem; align-items: start; }
@@ -154,17 +159,11 @@
   .svc-tags .sep { color: var(--gold); margin: 0 .6rem; }
   .svc-photo { width: 100%; height: auto; aspect-ratio: 2/1; object-fit: cover; margin-top: 2.6rem; border: 1px solid var(--line); }
 
-  .why { background: linear-gradient(180deg, #0d1811 0%, var(--forest) 14%); color: var(--paper); padding: 5.5rem 0; border-top: 1px solid rgba(201,172,110,.18); position: relative; }
-  .why .kicker { color: var(--gold-pale); }
-  .why .kicker::before { background: var(--gold-pale); }
-  .why h2 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(1.8rem, 3vw, 2.4rem); letter-spacing: -.02em; margin-bottom: 1.1rem; max-width: 620px; }
-  .why h2 em { font-style: italic; color: var(--gold-pale); }
-  .why > .container > p { font-size: .96rem; line-height: 1.8; color: rgba(241,236,220,.6); max-width: 600px; }
-  .why-list { margin-top: 3rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.8rem; }
-  .why-item { padding-top: 1.8rem; border-top: 1px solid var(--line-dark); }
-  .why-num { font-family: 'Fraunces', serif; font-style: italic; font-size: 1.6rem; color: var(--gold-pale); opacity: .75; margin-bottom: .8rem; }
-  .why-item h4 { font-size: .96rem; font-weight: 600; margin-bottom: .6rem; }
-  .why-item p { font-size: .85rem; line-height: 1.7; color: rgba(241,236,220,.55); }
+  .why-list-v { display: flex; flex-direction: column; gap: 1.7rem; }
+  .why-item-v { display: grid; grid-template-columns: 36px 1fr; gap: 1rem; padding-top: 1.4rem; border-top: 1px solid var(--line-dark); }
+  .why-item-v .why-num { font-family: 'Fraunces', serif; font-style: italic; font-size: 1.25rem; color: var(--gold-pale); opacity: .8; }
+  .why-item-v h4 { font-size: .92rem; font-weight: 600; margin-bottom: .45rem; }
+  .why-item-v p { font-size: .84rem; line-height: 1.65; color: rgba(241,236,220,.55); }
 
   .cta-strip { padding: 4.4rem 0 5.2rem; border-top: 1px solid var(--line); }
   .cta-strip-inner { display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap; }
@@ -188,7 +187,8 @@
     .svc-detail-grid { grid-template-columns: 1fr; gap: 1.2rem; }
     .svc-detail-grid > .svc-photo { grid-column: 1; }
     .svc-photo { aspect-ratio: 4/3; }
-    .why-list { grid-template-columns: 1fr; gap: 2rem; }
+    .intro-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .intro-divider { display: none; }
     .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
     .nav-links .link { display: none; }
     .burger { display: flex; }
@@ -242,34 +242,22 @@
   <a href="tel:+4916094656852" class="mm-phone">+49 160 94656852</a>
 </div>
 
-<section class="page-hero" id="main-content">
-  <div class="container">
-    <div class="kicker reveal">// Leistungen</div>
-    <h1 class="reveal">Vier Prüfverfahren, <em>ein Ziel: Klarheit.</em><span class="sr-only"> Baumkontrolle, Bruchsicherheit, Standsicherheit und Holzwertermittlung im Odenwald.</span></h1>
-    <p class="reveal">Jede Untersuchung wird individuell auf Ihre Fragestellung abgestimmt, von der einfachen Sichtkontrolle bis zur eingehenden technischen Untersuchung.</p>
-  </div>
-</section>
-
-<section class="why">
-  <div class="container">
-    <div class="kicker reveal">// Warum ein Gutachten</div>
-    <h2 class="reveal d1">Sicherheit, die <em>standhält.</em></h2>
-    <p class="reveal d2">Ein Baum kann in Sekunden zur Gefahr werden, und ein unklares Risiko schnell zur Haftungsfrage. Ein fachlich fundiertes Gutachten schafft Klarheit, bevor etwas passiert.</p>
-    <div class="why-list">
-      <div class="why-item reveal d1">
-        <div class="why-num">01</div>
-        <h4>Rechtssicherheit</h4>
-        <p>Als Grundstückseigentümer sind Sie zur Verkehrssicherung verpflichtet. Ein dokumentiertes Gutachten schützt Sie im Schadensfall.</p>
-      </div>
-      <div class="why-item reveal d2">
-        <div class="why-num">02</div>
-        <h4>Objektive Einschätzung</h4>
-        <p>Statt Vermutungen liefert eine fachgerechte Untersuchung belastbare, nachvollziehbare Ergebnisse mit anerkannten Messverfahren.</p>
-      </div>
-      <div class="why-item reveal d3">
-        <div class="why-num">03</div>
-        <h4>Frühzeitig statt zu spät</h4>
-        <p>Viele Risiken lassen sich rechtzeitig erkennen und mit gezielten Maßnahmen statt einer vollständigen Fällung beheben.</p>
+<section class="intro-split" id="main-content">
+  <div class="container intro-grid">
+    <div class="intro-left reveal">
+      <div class="kicker">// Leistungen</div>
+      <h1>Vier Prüfverfahren, <em>ein Ziel: Klarheit.</em><span class="sr-only"> Baumkontrolle, Bruchsicherheit, Standsicherheit und Holzwertermittlung im Odenwald.</span></h1>
+      <p class="lead-sm">Jede Untersuchung wird individuell auf Ihre Fragestellung abgestimmt, von der einfachen Sichtkontrolle bis zur eingehenden technischen Untersuchung.</p>
+    </div>
+    <div class="intro-divider" aria-hidden="true"></div>
+    <div class="intro-right reveal d1">
+      <div class="kicker">// Warum ein Gutachten</div>
+      <h2>Sicherheit, die <em>standhält.</em></h2>
+      <p class="lead-sm">Ein Baum kann in Sekunden zur Gefahr werden, und ein unklares Risiko schnell zur Haftungsfrage. Ein fachlich fundiertes Gutachten schafft Klarheit, bevor etwas passiert.</p>
+      <div class="why-list-v">
+        <div class="why-item-v"><div class="why-num">01</div><div><h4>Rechtssicherheit</h4><p>Als Grundstückseigentümer sind Sie zur Verkehrssicherung verpflichtet. Ein dokumentiertes Gutachten schützt Sie im Schadensfall.</p></div></div>
+        <div class="why-item-v"><div class="why-num">02</div><div><h4>Objektive Einschätzung</h4><p>Statt Vermutungen liefert eine fachgerechte Untersuchung belastbare, nachvollziehbare Ergebnisse mit anerkannten Messverfahren.</p></div></div>
+        <div class="why-item-v"><div class="why-num">03</div><div><h4>Frühzeitig statt zu spät</h4><p>Viele Risiken lassen sich rechtzeitig erkennen und mit gezielten Maßnahmen statt einer vollständigen Fällung beheben.</p></div></div>
       </div>
     </div>
   </div>
@@ -399,19 +387,38 @@ var io = new IntersectionObserver(function(entries){
 }, { threshold: 0.15 });
 document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
 
-var sectionNavLinks = document.querySelectorAll('.section-nav a');
-var sectionNavTargets = ['baumkontrolle','bruchsicherheit','standsicherheit','holzwert']
-  .map(function(id){ return document.getElementById(id); })
-  .filter(Boolean);
-var sectionNavObserver = new IntersectionObserver(function(entries){
-  entries.forEach(function(entry){
-    if (entry.isIntersecting) {
-      var id = entry.target.id;
-      sectionNavLinks.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href') === '#' + id); });
-    }
+var sectionNavEntries = ['baumkontrolle','bruchsicherheit','standsicherheit','holzwert']
+  .map(function(id){
+    return { el: document.getElementById(id), link: document.querySelector('.section-nav a[href="#' + id + '"]') };
+  })
+  .filter(function(e){ return e.el && e.link; });
+
+var sectionNavTicking = false;
+function updateSectionNav(){
+  sectionNavTicking = false;
+  var vh = window.innerHeight;
+  var center = vh / 2;
+  var range = vh * 0.6;
+  sectionNavEntries.forEach(function(e){
+    var rect = e.el.getBoundingClientRect();
+    var sectionCenter = rect.top + rect.height / 2;
+    var dist = Math.abs(sectionCenter - center);
+    var proximity = Math.max(0, 1 - dist / range);
+    proximity = proximity * proximity * (3 - 2 * proximity);
+    e.link.style.setProperty('--proximity', proximity.toFixed(3));
   });
-}, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
-sectionNavTargets.forEach(function(s){ sectionNavObserver.observe(s); });
+}
+function onSectionNavScroll(){
+  if (!sectionNavTicking) {
+    sectionNavTicking = true;
+    requestAnimationFrame(updateSectionNav);
+  }
+}
+if (sectionNavEntries.length) {
+  window.addEventListener('scroll', onSectionNavScroll, { passive: true });
+  window.addEventListener('resize', onSectionNavScroll);
+  updateSectionNav();
+}
 
 var burgerBtn = document.getElementById('burgerBtn');
 var mobileMenu = document.getElementById('mobileMenu');
